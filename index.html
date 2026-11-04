@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Antonella Bedini: independent robotics strategy and operations advisory for robotics startups, scale-ups, VCs and private equity firms. London, UK and Europe.">
+<meta property="og:title" content="Antonella Bedini | Robotics Strategy &amp; Operations Advisory">
+<meta property="og:description" content="Strategy, operating plans and governance for robotics and physical-AI companies and their investors.">
+<meta property="og:url" content="https://antonellabedini.com/">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230B6A66'/%3E%3Ctext x='16' y='22' font-family='Arial' font-weight='700' font-size='16' text-anchor='middle' fill='white'%3EAB%3C/text%3E%3C/svg%3E">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Antonella Bedini | Robotics Strategy &amp; Operations Advisory</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a field commissioning sheet. Wide expanded headline, an advisory framework (strategy, plan, governance) as a canopy over the deployment gates,
+   then audience tracks, a sample readiness scorecard, track record and contact. */
+:root{
+  --bg:#F2F4F5; --surface:#FFFFFF; --ink:#111820; --muted:#566370; --line:#D3DADF;
+  --accent:#0B6A66; --accent-soft:#DCEDEB; --signal:#C98A00;
+  --ok:#1E7A46; --warn:#B07500; --bad:#B23A2E;
+  --display:"Archivo","Arial Narrow",Arial,sans-serif;
+  --body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0E1317; --surface:#151C22; --ink:#E7ECEF; --muted:#93A1AD; --line:#26313A;
+  --accent:#4FC2B9; --accent-soft:#16302F; --signal:#E8B23A;
+  --ok:#5BC48A; --warn:#E3AE45; --bad:#E57C70; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1317; --surface:#151C22; --ink:#E7ECEF; --muted:#93A1AD; --line:#26313A;
+  --accent:#4FC2B9; --accent-soft:#16302F; --signal:#E8B23A;
+  --ok:#5BC48A; --warn:#E3AE45; --bad:#E57C70; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1120px;margin:0 auto}
+a{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.05}
+h2{font-size:clamp(28px,4vw,40px);font-variation-settings:"wdth" 112;font-weight:700;letter-spacing:-.01em}
+h3{font-size:20px;font-weight:700;font-variation-settings:"wdth" 105}
+p{margin:0}
+.label{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+section{padding-block:72px;border-top:1px solid var(--line)}
+.section-head{display:grid;gap:12px;max-width:62ch;margin-bottom:40px}
+.section-head p{color:var(--muted)}
+
+/* header */
+header.top{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:20px;flex-wrap:wrap}
+.mark{font-family:var(--display);font-weight:800;font-variation-settings:"wdth" 125;font-size:18px;letter-spacing:.02em}
+.mark span{color:var(--accent)}
+nav{display:flex;gap:20px;flex-wrap:wrap;font-size:15px}
+nav a{color:var(--muted);text-decoration:none}
+nav a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:var(--bg);border:0;
+  font:600 15px var(--body);padding:12px 20px;border-radius:4px;text-decoration:none;cursor:pointer}
+.btn:hover{background:var(--accent)}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--line)}
+.btn.ghost:hover{box-shadow:inset 0 0 0 1px var(--ink);background:transparent}
+
+/* hero */
+.hero{padding-block:56px 64px;display:grid;gap:28px}
+.hero h1{font-size:clamp(42px,8.5vw,104px);font-weight:800;font-variation-settings:"wdth" 125;letter-spacing:-.02em;max-width:14ch}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.lede{font-size:clamp(18px,2vw,21px);max-width:60ch;color:var(--ink)}
+.lede b{font-weight:600}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap}
+.levers{list-style:none;margin:-8px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.levers li{font-family:var(--mono);font-size:13px;letter-spacing:.02em;color:var(--accent);background:var(--accent-soft);padding:6px 12px;border-radius:3px}
+.cred-line{font-size:15px;color:var(--muted);max-width:60ch;margin-top:-8px}
+
+/* gate ladder */
+.ladder{margin-top:24px;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:24px;overflow-x:auto}
+.ladder-head{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:20px}
+.frame{min-width:760px;position:relative;padding:0 14px 4px;border-left:2px solid var(--accent-soft);border-right:2px solid var(--accent-soft);border-radius:28px 28px 0 0}
+.canopy{display:grid;gap:6px;margin:0 -14px}
+.layer{display:grid;grid-template-columns:250px 1fr;gap:6px 20px;align-items:baseline;padding:12px 20px}
+.layer b{font-family:var(--display);font-variation-settings:"wdth" 110;font-size:16px;font-weight:700}
+.layer span{font-size:14px;line-height:1.45}
+.l1{background:var(--accent);color:var(--surface);border-radius:28px 28px 4px 4px}
+.l1 span{color:var(--surface);opacity:.88}
+.l2{background:var(--accent-soft);color:var(--ink);margin-inline:12px;padding-left:8px;border-radius:4px}
+.l2 b{margin-left:0}
+.l3{background:transparent;color:var(--ink);margin-inline:24px;padding-left:-4px;border-radius:4px;box-shadow:inset 0 0 0 1px var(--accent)}
+.layer:not(.l1) span{color:var(--muted)}
+.exec-label{margin:22px 0 14px;display:flex;align-items:center;gap:10px}
+.exec-label::after{content:"";flex:1;height:1px;background:var(--line)}
+.gates{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(6,minmax(120px,1fr));position:relative}
+.gates::before{content:"";position:absolute;left:8px;right:8px;top:9px;height:2px;background:var(--line)}
+.gate{position:relative;padding-right:12px;display:grid;gap:6px;align-content:start}
+.gate i{width:20px;height:20px;border-radius:50%;background:var(--surface);border:2px solid var(--muted);position:relative;z-index:1}
+.gate b{font-family:var(--mono);font-size:12px;font-weight:500;color:var(--muted)}
+.gate strong{font-family:var(--display);font-variation-settings:"wdth" 110;font-size:17px}
+.gate span{font-size:14px;color:var(--muted);line-height:1.45}
+.gate.gap i{border-color:var(--signal);background:var(--signal)}
+.gap-band{grid-column:4 / 6;grid-row:2;margin-top:16px;border-top:2px dashed var(--signal);padding-top:10px;
+  font-size:14px;color:var(--ink)}
+.gap-band .label{color:var(--signal);display:block;margin-bottom:2px}
+
+/* proof */
+.proof{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.proof div{padding:20px 20px 20px 0;display:grid;gap:4px}
+.proof div+div{padding-left:20px;border-left:1px solid var(--line)}
+.proof strong{font-family:var(--display);font-variation-settings:"wdth" 118;font-size:30px;font-weight:700;font-variant-numeric:tabular-nums}
+.proof span{font-size:14px;color:var(--muted);line-height:1.4}
+
+/* tracks */
+.tracks{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.track{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:28px;display:grid;gap:16px;align-content:start;min-width:0}
+.track .who{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.track p.q{font-size:15px;color:var(--muted);border-left:2px solid var(--accent);padding-left:12px}
+.track ul{margin:0;padding-left:18px;display:grid;gap:6px;font-size:15px}
+.track dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:14px;border-top:1px solid var(--line);padding-top:14px}
+.track dt{font-family:var(--mono);font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;padding-top:2px}
+.track dd{margin:0}
+
+/* scorecard */
+.score-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:40px;align-items:start}
+.sheet{background:var(--surface);border:1px solid var(--line);border-radius:6px;overflow:hidden;min-width:0}
+.sheet-head{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:16px 20px;border-bottom:1px solid var(--line);background:var(--accent-soft)}
+.sheet-head strong{font-family:var(--display);font-variation-settings:"wdth" 108}
+.tablewrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:15px;min-width:520px}
+th,td{text-align:left;padding:12px 20px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:var(--mono);font-weight:500;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+td:first-child{font-weight:600}
+td.num{font-variant-numeric:tabular-nums}
+.pill{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:12px;white-space:nowrap}
+.pill::before{content:"";width:9px;height:9px;border-radius:50%;background:currentColor}
+.pill.ok{color:var(--ok)} .pill.warn{color:var(--warn)} .pill.bad{color:var(--bad)}
+.verdict{padding:16px 20px;font-size:15px}
+.verdict b{font-family:var(--mono);font-weight:500;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-right:8px}
+
+/* record */
+.record{display:grid;gap:0}
+.role{display:grid;grid-template-columns:150px minmax(0,1fr) minmax(0,1.3fr);gap:24px;padding-block:24px;border-top:1px solid var(--line)}
+.role:last-child{border-bottom:1px solid var(--line)}
+.role .yrs{font-family:var(--mono);font-size:14px;color:var(--muted);font-variant-numeric:tabular-nums}
+.role h3{font-size:19px}
+.role .org{color:var(--muted);font-size:15px;margin-top:4px}
+.role ul{margin:0;padding-left:18px;font-size:15px;display:grid;gap:4px}
+
+/* process */
+.steps{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;counter-reset:s}
+.steps li{counter-increment:s;display:grid;gap:8px;padding-top:16px;border-top:2px solid var(--ink)}
+.steps li::before{content:"Step " counter(s);font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.steps p{color:var(--muted);font-size:15px}
+
+/* credentials */
+.creds{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.creds div{display:grid;gap:6px;align-content:start}
+.creds p{font-size:15px}
+.creds p+p{margin-top:10px}
+.creds b{font-weight:600}
+.cert-list{list-style:none;margin:0;padding:0;font-size:15px}
+.cert-list li{display:flex;justify-content:space-between;gap:12px;padding-block:8px;border-bottom:1px solid var(--line)}
+.cert-list li:first-child{border-top:1px solid var(--line)}
+.cert-list li b{font-family:var(--mono);font-size:13px;font-weight:400;color:var(--muted);font-variant-numeric:tabular-nums}
+
+/* contact */
+.contact{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:40px;align-items:end}
+.contact h2{font-size:clamp(32px,5vw,56px);font-variation-settings:"wdth" 122}
+.mailbox{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:20px;display:grid;gap:12px}
+.mailbox code{font-family:var(--mono);font-size:16px;word-break:break-all;user-select:all}
+.copy-note{font-size:13px;color:var(--muted);min-height:1.2em}
+footer{padding-block:32px;font-size:13px;color:var(--muted);border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+@media (max-width:900px){
+  .tracks,.steps,.creds{grid-template-columns:1fr}
+  .score-grid,.contact{grid-template-columns:1fr;gap:28px}
+  .proof{grid-template-columns:1fr 1fr}
+  .proof div:nth-child(3){padding-left:0;border-left:0}
+  .proof div:nth-child(n+3){border-top:1px solid var(--line)}
+  .role{grid-template-columns:1fr;gap:10px}
+  nav{display:none}
+}
+@media (prefers-reduced-motion:no-preference){
+  .gate.gap i{animation:pulse 2.4s ease-in-out infinite}
+  @keyframes pulse{50%{box-shadow:0 0 0 6px color-mix(in srgb,var(--signal) 25%,transparent)}}
+}
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+<header class="top">
+  <div class="mark">BEDINI<span>/</span>ADVISORY</div>
+  <nav aria-label="Sections">
+    <a href="#services">Services</a><a href="#scorecard">Scorecard</a><a href="#record">Track record</a><a href="#contact">Contact</a>
+  </nav>
+  <a class="btn" href="#contact">Book a diagnostic call</a>
+</header>
+
+<div class="hero">
+  <p class="label">Independent robotics strategy &amp; operations advisory · London · UK &amp; Europe</p>
+  <h1>Robotics strategy, <em>built to deploy.</em></h1>
+  <p class="lede">I help <b>robotics startups and scale-ups, VCs and private equity firms</b> set the strategy and operating plan behind a robotics business: where to compete, what to build next, how to deploy it across use cases and sites, and whether it pays back.</p>
+  <ul class="levers" aria-label="How I make the strategy happen">
+    <li>Operational plans</li><li>Organisational structure</li><li>Strategy alignment</li><li>Prioritisation mechanisms</li>
+  </ul>
+  <p class="cred-line">12 years in robotics, automation and industrialisation at Amazon Robotics, ABB Robotics, Tetra Pak and Philip Morris International, plus hands-on operating work inside private-equity portfolios.</p>
+  <div class="cta-row">
+    <a class="btn" href="#contact">Book a 30-minute diagnostic</a>
+    <a class="btn ghost" href="#scorecard">See a sample readiness scorecard</a>
+  </div>
+
+  <div class="ladder" aria-label="Advisory framework: strategy, operating plan and governance over the deployment stage gates">
+    <div class="ladder-head">
+      <span class="label">Advisory framework</span>
+      <span class="label">Strategy &amp; governance across every gate · Hands-on focus G3–G5</span>
+    </div>
+    <div class="frame">
+    <div class="canopy" aria-label="Strategy layers that sit over every stage">
+      <div class="layer l1"><b>Strategy</b><span>Where to compete, which customers and use cases first, investment thesis</span></div>
+      <div class="layer l2"><b>Operating plan &amp; prioritisation</b><span>Roadmap, resourcing, intake and prioritisation mechanisms, KPIs and budget</span></div>
+      <div class="layer l3"><b>Organisation &amp; governance</b><span>Team structure, decision rights, gate reviews and leadership alignment</span></div>
+    </div>
+    <p class="exec-label label">Execution · stage gates</p>
+    <ol class="gates">
+      <li class="gate"><i></i><b>G1</b><strong>Prototype</strong><span>Model performs curated tasks in the lab</span></li>
+      <li class="gate"><i></i><b>G2</b><strong>Validation</strong><span>Accuracy, speed and safety measured against target benchmarks</span></li>
+      <li class="gate gap"><i></i><b>G3</b><strong>Pilot</strong><span>First use case in live operations, on real customer data</span></li>
+      <li class="gate gap"><i></i><b>G4</b><strong>Repeatable use case</strong><span>Same task at new sites with minimal retraining</span></li>
+      <li class="gate gap"><i></i><b>G5</b><strong>Multi use case</strong><span>New tasks added by a generalist model, not custom engineering</span></li>
+      <li class="gate"><i></i><b>G6</b><strong>Self-improving fleet</strong><span>Data loop lifts accuracy and speed, and cuts deployment time</span></li>
+      <li class="gap-band"><span class="label">The pilot-to-production gap</span>Where physical-AI companies most often stall: a model that wins one pilot but does not generalise, and where capital is most often mispriced.</li>
+    </ol>
+    </div>
+  </div>
+</div>
+
+<div class="proof" aria-label="Track record in numbers">
+  <div><strong>$500M+</strong><span>global robotics portfolio governed at Amazon Robotics</span></div>
+  <div><strong>15%</strong><span>faster deployment from standardised gates and risk control</span></div>
+  <div><strong>+20%</strong><span>portfolio ARR across 5 PE-backed companies</span></div>
+  <div><strong>12 yrs</strong><span>taking automation from R&amp;D to scaled deployment</span></div>
+</div>
+
+<section id="services">
+  <div class="section-head">
+    <p class="label">Who I work with</p>
+    <h2>Three seats at the same table</h2>
+    <p>The investor, the buyer and the builder all need the same two answers: is the strategy right, and can the operation deliver it at scale? Each engagement is fixed in scope and ends with a decision-ready output.</p>
+  </div>
+  <div class="tracks">
+    <article class="track">
+      <span class="who">Startups &amp; scale-ups</span>
+      <h3>Strategy &amp; operating plan</h3>
+      <p class="q">"We need a first customer pilot that proves the business, and a plan investors will back."</p>
+      <ul>
+        <li>Early stage: first-customer and pilot design, success criteria, fundraising readiness</li>
+        <li>Strategy and operating plan: segment focus, roadmap priorities, unit economics</li>
+        <li>Deployment playbook, validation gates and KPI framework</li>
+        <li>Field and applications team design, hiring bar</li>
+        <li>Go-to-market and sales support for first repeat customers</li>
+        <li>Fractional COO or Chief of Staff, board advisor</li>
+      </ul>
+      <dl><dt>Output</dt><dd>Playbook your team runs without me</dd><dt>Timing</dt><dd>6–12 weeks, or monthly retainer</dd></dl>
+    </article>
+    <article class="track">
+      <span class="who">Venture capital</span>
+      <h3>Strategic &amp; deployment due diligence</h3>
+      <p class="q">"The demo is impressive. Is the market real, and will the model generalise to the next 20 use cases and sites?"</p>
+      <ul>
+        <li>Market focus and go-to-market thesis: which segments will buy and why</li>
+        <li>Pilot evidence review: task accuracy and speed, interventions, uptime</li>
+        <li>Generalisation: how fast the model learns new use cases and sites</li>
+        <li>Deployment playbook and field-team maturity</li>
+        <li>Site-level unit economics and customer payback</li>
+        <li>Milestones to tie to the next tranche</li>
+      </ul>
+      <dl><dt>Output</dt><dd>Readiness scorecard and red-flag memo</dd><dt>Timing</dt><dd>2–3 weeks, pre-term-sheet</dd></dl>
+    </article>
+    <article class="track">
+      <span class="who">Private equity</span>
+      <h3>Automation strategy &amp; value creation</h3>
+      <p class="q">"We're buying an integrator. Where is the margin hiding, and where is the risk?"</p>
+      <ul>
+        <li>Investment thesis and buy-and-build strategy in automation</li>
+        <li>Operational diligence on integrators and automation platforms</li>
+        <li>Project delivery, cost overrun and backlog risk</li>
+        <li>100-day plan and portfolio PMO set-up</li>
+        <li>Board-level reporting on deployment KPIs</li>
+      </ul>
+      <dl><dt>Output</dt><dd>Diligence report and 100-day plan</dd><dt>Timing</dt><dd>3–6 weeks, then optional board role</dd></dl>
+    </article>
+  </div>
+</section>
+
+<section id="scorecard">
+  <div class="score-grid">
+    <div class="section-head" style="margin-bottom:0">
+      <p class="label">What you get</p>
+      <h2>A readiness scorecard, not a slide of opinions</h2>
+      <p>Every diligence engagement scores the company on the evidence that predicts deployment at scale. Each rating links to the data behind it, and the verdict says what to fund, what to make a milestone, and what to walk away from.</p>
+    </div>
+    <div class="sheet">
+      <div class="sheet-head"><strong>Series A mobile manipulation company</strong><span class="label">Illustrative example</span></div>
+      <div class="tablewrap">
+      <table>
+        <thead><tr><th>Criterion</th><th>Evidence</th><th>Rating</th></tr></thead>
+        <tbody>
+          <tr><td>Pilot evidence</td><td class="num">3 sites, 11 weeks of production data</td><td><span class="pill warn">Partial</span></td></tr>
+          <tr><td>Interventions per robot-hour</td><td class="num">Falling, 0.8 → 0.3 over 8 weeks</td><td><span class="pill ok">Strong</span></td></tr>
+          <tr><td>Task accuracy &amp; speed</td><td class="num">96% pick success at 70% of human cycle time</td><td><span class="pill warn">Partial</span></td></tr>
+          <tr><td>Generalisation to new use cases</td><td class="num">1 of 3 new tasks learned without custom tuning</td><td><span class="pill bad">Gap</span></td></tr>
+          <tr><td>Time to deploy a new use case</td><td class="num">14 weeks, mostly manual data collection and tuning</td><td><span class="pill warn">Partial</span></td></tr>
+          <tr><td>Customer payback</td><td class="num">22 months modelled, not yet measured</td><td><span class="pill warn">Partial</span></td></tr>
+          <tr><td>Field &amp; support model</td><td>Founders on site for every install</td><td><span class="pill bad">Gap</span></td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p class="verdict"><b>Verdict</b>Strong product, not yet a deployable one. Fund, with the second tranche tied to a second use case deployed in under 6 weeks without custom tuning.</p>
+    </div>
+  </div>
+</section>
+
+<section id="record">
+  <div class="section-head">
+    <p class="label">Track record</p>
+    <h2>Strategy, tested on the deployment floor</h2>
+    <p>Every role has combined the plan and its delivery: deciding where automation should go next, then making it run at scale and pay back.</p>
+  </div>
+  <div class="record">
+    <div class="role"><span class="yrs">2026</span><div><h3>Global Robotics Portfolio &amp; Solution Manager</h3><p class="org">ABB Robotics</p></div>
+      <ul><li>Led deployment and go-to-market strategy for a $10M first-of-kind autonomous mobile manipulator, prototype to commercial launch</li><li>Built a global team of product managers and deployment engineers; prioritised and quantified customer use cases</li><li>Designed the validation gates, deployment playbook and KPI framework for global rollout</li></ul></div>
+    <div class="role"><span class="yrs">2025</span><div><h3>Senior Robotics Product Strategy Consultant</h3><p class="org">University of Cambridge</p></div>
+      <ul><li>Turned robotics research into product propositions, use cases and value narratives</li><li>Advised research teams and robotics startups on productisation: MVP definition, platform strategy, market entry and roadmap</li></ul></div>
+    <div class="role"><span class="yrs">2024 – 2025</span><div><h3>Portfolio Director, Product Strategy &amp; Operations</h3><p class="org">YFM Private Equity</p></div>
+      <ul><li>Set strategy and value-creation plans for 5 SaaS portfolio companies (£5–20M ARR) as operator and board advisor</li><li>Drove 20–30% annual growth targets through go-to-market optimisation, product repositioning and roadmap reprioritisation</li><li>Supported the sale of a Series A portfolio company</li></ul></div>
+    <div class="role"><span class="yrs">2024</span><div><h3>Robotics Consultant</h3><p class="org">Cambridge Innovation Capital (CIC)</p></div>
+      <ul><li>Advised a Cambridge deep-tech venture capital investor on robotics</li></ul></div>
+    <div class="role"><span class="yrs">2019 – 2024</span><div><h3>Global Robotics PMO Manager, Strategy &amp; Operations</h3><p class="org">Amazon Robotics</p></div>
+      <ul><li>Ran the strategy and operations engine for a $500M+ robotics portfolio across Europe and North America: intake, prioritisation, financial review and the yearly operating plan</li><li>Led leadership alignment on headcount plans and a 2-year deployment plan for a 500+ FTE global team; merged two teams into one</li><li>Built a 12-person PMO; $100M+ per year in UK and EU deployments; deployment time cut 15%</li><li>Delivered $35M+ automation programmes with 110+ engineers and vendors; built the ROI cases behind investment decisions</li></ul></div>
+    <div class="role"><span class="yrs">2014 – 2019</span><div><h3>Project Manager, R&amp;D Automation</h3><p class="org">Tetra Pak</p></div>
+      <ul><li>Took €5M+ automation launches from R&amp;D through global customer pilots and deployment</li><li>Graduate leadership programme across Italy, Sweden and Mexico, reporting to VPs on new global products</li></ul></div>
+    <div class="role"><span class="yrs">2014</span><div><h3>Project Manager, Product Industrialisation</h3><p class="org">Philip Morris International</p></div>
+      <ul><li>Built global KPI frameworks and operational processes for large-scale product launches</li><li>Implemented IT systems that enabled data-driven decisions and operational scale</li></ul></div>
+  </div>
+</section>
+
+<section>
+  <div class="section-head">
+    <p class="label">How an engagement runs</p>
+    <h2>Scoped up front, priced up front</h2>
+  </div>
+  <ol class="steps">
+    <li><h3>Diagnostic call</h3><p>30 minutes, free. You describe the company or deal; I tell you whether I can help and what I would look at first.</p></li>
+    <li><h3>Fixed-scope engagement</h3><p>A written scope, fee and deadline. Data-room review, site visits and interviews with the team and customers.</p></li>
+    <li><h3>Ongoing advisory</h3><p>Optional. A monthly retainer, a board seat, or a fractional operating role through the next funding milestone.</p></li>
+  </ol>
+</section>
+
+<section>
+  <div class="creds">
+    <div><p class="label">Education</p><p><b>MEng, Industrial Management Engineering</b><br>University of Bologna &amp; Imperial College London<br>First Class Honours with Distinction (110/110). Research on entrepreneurship and technology transfer.</p><p><b>Master of Research, Innovation &amp; Entrepreneurship</b><br>LUISS Business School &amp; Imperial College London<br>Econometrics and the commercialisation of breakthrough innovation.</p><p><b>Guest lecturer</b></p><ul class="cert-list" style="margin-top:8px"><li><span>LUISS Business School</span><b>Innovation management</b></li><li><span>University of Milano-Bicocca</span><b>Strategic planning</b></li><li><span>Ca' Foscari University of Venice</span><b>Data management</b></li></ul></div>
+    <div><p class="label">Certifications</p><ul class="cert-list"><li><span>Foundation certificate, UK Private Capital</span><b>2024</b></li><li><span>Leadership &amp; Change, LSE</span><b>2023</b></li><li><span>Project Management Professional (PMP)</span><b>2018</b></li><li><span>Change Management</span><b>2018</b></li><li><span>Risk Management</span><b>2017</b></li></ul></div>
+    <div><p class="label">Working languages</p><ul class="cert-list"><li><span>English</span><b>Full professional</b></li><li><span>Italian</span><b>Native</b></li><li><span>Spanish</span><b>Professional</b></li></ul><p style="margin-top:12px;color:var(--muted)">British and Italian citizen, working across the UK and EU.</p></div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="contact">
+    <div style="display:grid;gap:16px">
+      <p class="label">Contact</p>
+      <h2>Have a robotics deal or deployment on the table?</h2>
+      <p style="color:var(--muted);max-width:52ch">Send two lines on the company and the decision you're facing. I reply within two working days.</p>
+    </div>
+    <div class="mailbox">
+      <span class="label">Email</span>
+      <code id="email">antonella.bedini88@gmail.com</code>
+      <div class="cta-row"><button class="btn" id="copyBtn" type="button">Copy email</button><a class="btn ghost" href="mailto:antonella.bedini88@gmail.com">Open mail app</a></div>
+      <p class="copy-note" id="copyNote" aria-live="polite"></p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>© 2026 Antonella Bedini · Independent advisory, London</span>
+  <span>Views are my own and not those of any current or past employer.</span>
+</footer>
+</div>
+
+<script>
+document.getElementById('copyBtn').addEventListener('click',function(){
+  var t=document.getElementById('email').textContent, n=document.getElementById('copyNote');
+  function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById('email'));var s=getSelection();s.removeAllRanges();s.addRange(r);n.textContent='Selected. Press Ctrl+C or Cmd+C to copy.';}
+  try{navigator.clipboard.writeText(t).then(function(){n.textContent='Email copied.';},sel);}catch(e){sel();}
+});
+</script>
+
+</body>
+</html>
