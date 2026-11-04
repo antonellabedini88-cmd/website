@@ -64,7 +64,9 @@ nav a:hover{color:var(--ink)}
 .btn.ghost:hover{box-shadow:inset 0 0 0 1px var(--ink);background:transparent}
 
 /* hero */
-.hero{padding-block:56px 64px;display:grid;gap:28px}
+.hero{padding-block:56px 64px;display:grid;gap:28px;position:relative}
+@media (max-width:900px){}
+@media (max-width:600px){}
 .hero h1{font-size:clamp(42px,8.5vw,104px);font-weight:800;font-variation-settings:"wdth" 125;letter-spacing:-.02em;max-width:14ch}
 .hero h1 em{font-style:normal;color:var(--accent)}
 .lede{font-size:clamp(18px,2vw,21px);max-width:60ch;color:var(--ink)}
@@ -200,7 +202,7 @@ footer{padding-block:32px;font-size:13px;color:var(--muted);border-top:1px solid
 </header>
 
 <div class="hero">
-  <p class="label">Independent robotics strategy &amp; operations advisory · London · UK &amp; Europe</p>
+  <p class="label">Independent robotics strategy &amp; operations advisory</p>
   <h1>Robotics strategy, <em>built to deploy.</em></h1>
   <p class="lede">I help <b>robotics startups and scale-ups, VCs and private equity firms</b> set the strategy and operating plan behind a robotics business: where to compete, what to build next, how to deploy it across use cases and sites, and whether it pays back.</p>
   <ul class="levers" aria-label="How I make the strategy happen">
