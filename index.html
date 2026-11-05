@@ -17,13 +17,14 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230B6A66'/%3E%3Ctext x='16' y='22' font-family='Arial' font-weight='700' font-size='16' text-anchor='middle' fill='white'%3EAB%3C/text%3E%3C/svg%3E">
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>Antonella Bedini | Robotics Strategy &amp; Operations Advisory</title>
-<meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
-/* Layout: a field commissioning sheet. Wide expanded headline, an advisory framework (strategy, plan, governance) as a canopy over the deployment gates,
-   then audience tracks, a sample readiness scorecard, track record and contact. */
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{background:var(--bg)}
+.m{display:none}
+@media (max-width:699px){.d{display:none}.m{display:block}html{scroll-padding-top:64px}}
 :root{
   --bg:#F2F4F5; --surface:#FFFFFF; --ink:#111820; --muted:#566370; --line:#D3DADF;
   --accent:#0B6A66; --accent-soft:#DCEDEB; --signal:#C98A00;
@@ -40,164 +41,284 @@
   --bg:#0E1317; --surface:#151C22; --ink:#E7ECEF; --muted:#93A1AD; --line:#26313A;
   --accent:#4FC2B9; --accent-soft:#16302F; --signal:#E8B23A;
   --ok:#5BC48A; --warn:#E3AE45; --bad:#E57C70; color-scheme:dark}
-
-*{box-sizing:border-box}
-body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;
+.d,.d *{box-sizing:border-box}
+.d{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;
   padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-.wrap{max-width:1120px;margin:0 auto}
-a{color:var(--accent)}
-:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
-h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.05}
-h2{font-size:clamp(28px,4vw,40px);font-variation-settings:"wdth" 112;font-weight:700;letter-spacing:-.01em}
-h3{font-size:20px;font-weight:700;font-variation-settings:"wdth" 105}
-p{margin:0}
-.label{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-section{padding-block:72px;border-top:1px solid var(--line)}
-.section-head{display:grid;gap:12px;max-width:62ch;margin-bottom:40px}
-.section-head p{color:var(--muted)}
-
-/* header */
-header.top{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:20px;flex-wrap:wrap}
-.mark{font-family:var(--display);font-weight:800;font-variation-settings:"wdth" 125;font-size:18px;letter-spacing:.02em}
-.mark span{color:var(--accent)}
-nav{display:flex;gap:20px;flex-wrap:wrap;font-size:15px}
-nav a{color:var(--muted);text-decoration:none}
-nav a:hover{color:var(--ink)}
-.btn{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:var(--bg);border:0;
+.d .wrap{max-width:1120px;margin:0 auto}
+.d a{color:var(--accent)}
+.d :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+.d h1,.d h2,.d h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.05}
+.d h2{font-size:clamp(28px,4vw,40px);font-variation-settings:"wdth" 112;font-weight:700;letter-spacing:-.01em}
+.d h3{font-size:20px;font-weight:700;font-variation-settings:"wdth" 105}
+.d p{margin:0}
+.d .label{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.d section{padding-block:72px;border-top:1px solid var(--line)}
+.d .section-head{display:grid;gap:12px;max-width:62ch;margin-bottom:40px}
+.d .section-head p{color:var(--muted)}
+.d header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line);margin-inline:-16px;padding-inline:16px;display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:20px;flex-wrap:wrap}
+.d .mark{font-family:var(--display);font-weight:800;font-variation-settings:"wdth" 125;font-size:18px;letter-spacing:.02em}
+.d .mark span{color:var(--accent)}
+.d nav{display:flex;gap:20px;flex-wrap:wrap;font-size:15px}
+.d nav a{color:var(--muted);text-decoration:none}
+.d nav a:hover{color:var(--ink)}
+.d .btn{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:var(--bg);border:0;
   font:600 15px var(--body);padding:12px 20px;border-radius:4px;text-decoration:none;cursor:pointer}
-.btn:hover{background:var(--accent)}
-.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--line)}
-.btn.ghost:hover{box-shadow:inset 0 0 0 1px var(--ink);background:transparent}
-
-/* hero */
-.hero{padding-block:56px 64px;display:grid;gap:28px;position:relative}
+.d .btn:hover{background:var(--accent)}
+.d .btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--line)}
+.d .btn.ghost:hover{box-shadow:inset 0 0 0 1px var(--ink);background:transparent}
+.d .hero{padding-block:56px 64px;display:grid;gap:28px;position:relative}
 @media (max-width:900px){}
 @media (max-width:600px){}
-.hero h1{font-size:clamp(42px,8.5vw,104px);font-weight:800;font-variation-settings:"wdth" 125;letter-spacing:-.02em;max-width:14ch}
-.hero h1 em{font-style:normal;color:var(--accent)}
-.lede{font-size:clamp(18px,2vw,21px);max-width:60ch;color:var(--ink)}
-.lede b{font-weight:600}
-.cta-row{display:flex;gap:12px;flex-wrap:wrap}
-.levers{list-style:none;margin:-8px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
-.levers li{font-family:var(--mono);font-size:13px;letter-spacing:.02em;color:var(--accent);background:var(--accent-soft);padding:6px 12px;border-radius:3px}
-.cred-line{font-size:15px;color:var(--muted);max-width:60ch;margin-top:-8px}
-
-/* gate ladder */
-.ladder{margin-top:24px;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:24px;overflow-x:auto}
-.ladder-head{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:20px}
-.frame{min-width:760px;position:relative;padding:0 14px 4px;border-left:2px solid var(--accent-soft);border-right:2px solid var(--accent-soft);border-radius:28px 28px 0 0}
-.canopy{display:grid;gap:6px;margin:0 -14px}
-.layer{display:grid;grid-template-columns:250px 1fr;gap:6px 20px;align-items:baseline;padding:12px 20px}
-.layer b{font-family:var(--display);font-variation-settings:"wdth" 110;font-size:16px;font-weight:700}
-.layer span{font-size:14px;line-height:1.45}
-.l1{background:var(--accent);color:var(--surface);border-radius:28px 28px 4px 4px}
-.l1 span{color:var(--surface);opacity:.88}
-.l2{background:var(--accent-soft);color:var(--ink);margin-inline:12px;padding-left:8px;border-radius:4px}
-.l2 b{margin-left:0}
-.l3{background:transparent;color:var(--ink);margin-inline:24px;padding-left:-4px;border-radius:4px;box-shadow:inset 0 0 0 1px var(--accent)}
-.layer:not(.l1) span{color:var(--muted)}
-.exec-label{margin:22px 0 14px;display:flex;align-items:center;gap:10px}
-.exec-label::after{content:"";flex:1;height:1px;background:var(--line)}
-.gates{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(6,minmax(120px,1fr));position:relative}
-.gates::before{content:"";position:absolute;left:8px;right:8px;top:9px;height:2px;background:var(--line)}
-.gate{position:relative;padding-right:12px;display:grid;gap:6px;align-content:start}
-.gate i{width:20px;height:20px;border-radius:50%;background:var(--surface);border:2px solid var(--muted);position:relative;z-index:1}
-.gate b{font-family:var(--mono);font-size:12px;font-weight:500;color:var(--muted)}
-.gate strong{font-family:var(--display);font-variation-settings:"wdth" 110;font-size:17px}
-.gate span{font-size:14px;color:var(--muted);line-height:1.45}
-.gate.gap i{border-color:var(--signal);background:var(--signal)}
-.gap-band{grid-column:4 / 6;grid-row:2;margin-top:16px;border-top:2px dashed var(--signal);padding-top:10px;
+.d .hero h1{font-size:clamp(42px,8.5vw,104px);font-weight:800;font-variation-settings:"wdth" 125;letter-spacing:-.02em;max-width:14ch}
+.d .hero h1 em{font-style:normal;color:var(--accent)}
+.d .lede{font-size:clamp(18px,2vw,21px);max-width:60ch;color:var(--ink)}
+.d .lede b{font-weight:600}
+.d .cta-row{display:flex;gap:12px;flex-wrap:wrap}
+.d .levers{list-style:none;margin:-8px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.d .levers li{font-family:var(--mono);font-size:13px;letter-spacing:.02em;color:var(--accent);background:var(--accent-soft);padding:6px 12px;border-radius:3px}
+.d .cred-line{font-size:15px;color:var(--muted);max-width:60ch;margin-top:-8px}
+.d .ladder{margin-top:24px;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:24px;overflow-x:auto}
+.d .ladder-head{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:20px}
+.d .frame{min-width:760px;position:relative;padding:0 14px 4px;border-left:2px solid var(--accent-soft);border-right:2px solid var(--accent-soft);border-radius:28px 28px 0 0}
+.d .canopy{display:grid;gap:6px;margin:0 -14px}
+.d .layer{display:grid;grid-template-columns:250px 1fr;gap:6px 20px;align-items:baseline;padding:12px 20px}
+.d .layer b{font-family:var(--display);font-variation-settings:"wdth" 110;font-size:16px;font-weight:700}
+.d .layer span{font-size:14px;line-height:1.45}
+.d .l1{background:var(--accent);color:var(--surface);border-radius:28px 28px 4px 4px}
+.d .l1 span{color:var(--surface);opacity:.88}
+.d .l2{background:var(--accent-soft);color:var(--ink);margin-inline:12px;padding-left:8px;border-radius:4px}
+.d .l2 b{margin-left:0}
+.d .l3{background:transparent;color:var(--ink);margin-inline:24px;padding-left:-4px;border-radius:4px;box-shadow:inset 0 0 0 1px var(--accent)}
+.d .layer:not(.l1) span{color:var(--muted)}
+.d .exec-label{margin:22px 0 14px;display:flex;align-items:center;gap:10px}
+.d .exec-label::after{content:"";flex:1;height:1px;background:var(--line)}
+.d .gates{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(6,minmax(120px,1fr));position:relative}
+.d .gates::before{content:"";position:absolute;left:8px;right:8px;top:9px;height:2px;background:var(--line)}
+.d .gate{position:relative;padding-right:12px;display:grid;gap:6px;align-content:start}
+.d .gate i{width:20px;height:20px;border-radius:50%;background:var(--surface);border:2px solid var(--muted);position:relative;z-index:1}
+.d .gate b{font-family:var(--mono);font-size:12px;font-weight:500;color:var(--muted)}
+.d .gate strong{font-family:var(--display);font-variation-settings:"wdth" 110;font-size:17px}
+.d .gate span{font-size:14px;color:var(--muted);line-height:1.45}
+.d .gate.gap i{border-color:var(--signal);background:var(--signal)}
+.d .gap-band{grid-column:4 / 6;grid-row:2;margin-top:16px;border-top:2px dashed var(--signal);padding-top:10px;
   font-size:14px;color:var(--ink)}
-.gap-band .label{color:var(--signal);display:block;margin-bottom:2px}
-
-/* proof */
-.proof{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.proof div{padding:20px 20px 20px 0;display:grid;gap:4px}
-.proof div+div{padding-left:20px;border-left:1px solid var(--line)}
-.proof strong{font-family:var(--display);font-variation-settings:"wdth" 118;font-size:30px;font-weight:700;font-variant-numeric:tabular-nums}
-.proof span{font-size:14px;color:var(--muted);line-height:1.4}
-
-/* tracks */
-.tracks{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.track{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:28px;display:grid;gap:16px;align-content:start;min-width:0}
-.track .who{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
-.track p.q{font-size:15px;color:var(--muted);border-left:2px solid var(--accent);padding-left:12px}
-.track ul{margin:0;padding-left:18px;display:grid;gap:6px;font-size:15px}
-.track dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:14px;border-top:1px solid var(--line);padding-top:14px}
-.track dt{font-family:var(--mono);font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;padding-top:2px}
-.track dd{margin:0}
-
-/* scorecard */
-.score-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:40px;align-items:start}
-.sheet{background:var(--surface);border:1px solid var(--line);border-radius:6px;overflow:hidden;min-width:0}
-.sheet-head{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:16px 20px;border-bottom:1px solid var(--line);background:var(--accent-soft)}
-.sheet-head strong{font-family:var(--display);font-variation-settings:"wdth" 108}
-.tablewrap{overflow-x:auto}
-table{width:100%;border-collapse:collapse;font-size:15px;min-width:520px}
-th,td{text-align:left;padding:12px 20px;border-bottom:1px solid var(--line);vertical-align:top}
-th{font-family:var(--mono);font-weight:500;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
-td:first-child{font-weight:600}
-td.num{font-variant-numeric:tabular-nums}
-.pill{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:12px;white-space:nowrap}
-.pill::before{content:"";width:9px;height:9px;border-radius:50%;background:currentColor}
-.pill.ok{color:var(--ok)} .pill.warn{color:var(--warn)} .pill.bad{color:var(--bad)}
-.verdict{padding:16px 20px;font-size:15px}
-.verdict b{font-family:var(--mono);font-weight:500;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-right:8px}
-
-/* record */
-.record{display:grid;gap:0}
-.role{display:grid;grid-template-columns:150px minmax(0,1fr) minmax(0,1.3fr);gap:24px;padding-block:24px;border-top:1px solid var(--line)}
-.role:last-child{border-bottom:1px solid var(--line)}
-.role .yrs{font-family:var(--mono);font-size:14px;color:var(--muted);font-variant-numeric:tabular-nums}
-.role h3{font-size:19px}
-.role .org{color:var(--muted);font-size:15px;margin-top:4px}
-.role ul{margin:0;padding-left:18px;font-size:15px;display:grid;gap:4px}
-
-/* process */
-.steps{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;counter-reset:s}
-.steps li{counter-increment:s;display:grid;gap:8px;padding-top:16px;border-top:2px solid var(--ink)}
-.steps li::before{content:"Step " counter(s);font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
-.steps p{color:var(--muted);font-size:15px}
-
-/* credentials */
-.creds{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-.creds div{display:grid;gap:6px;align-content:start}
-.creds p{font-size:15px}
-.creds p+p{margin-top:10px}
-.creds b{font-weight:600}
-.cert-list{list-style:none;margin:0;padding:0;font-size:15px}
-.cert-list li{display:flex;justify-content:space-between;gap:12px;padding-block:8px;border-bottom:1px solid var(--line)}
-.cert-list li:first-child{border-top:1px solid var(--line)}
-.lecture-list li{flex-direction:column;gap:2px}
-.lecture-list li b{font-family:var(--body);font-size:14px}
-.cert-list li b{font-family:var(--mono);font-size:13px;font-weight:400;color:var(--muted);font-variant-numeric:tabular-nums}
-
-/* contact */
-.contact{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:40px;align-items:end}
-.contact h2{font-size:clamp(32px,5vw,56px);font-variation-settings:"wdth" 122}
-.mailbox{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:20px;display:grid;gap:12px}
-.mailbox code{font-family:var(--mono);font-size:16px;word-break:break-all;user-select:all}
-.copy-note{font-size:13px;color:var(--muted);min-height:1.2em}
-footer{padding-block:32px;font-size:13px;color:var(--muted);border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-
-@media (max-width:900px){
-  .tracks,.steps,.creds{grid-template-columns:1fr}
-  .score-grid,.contact{grid-template-columns:1fr;gap:28px}
-  .proof{grid-template-columns:1fr 1fr}
-  .proof div:nth-child(3){padding-left:0;border-left:0}
-  .proof div:nth-child(n+3){border-top:1px solid var(--line)}
-  .role{grid-template-columns:1fr;gap:10px}
-  nav{display:none}
+.d .gap-band .label{color:var(--signal);display:block;margin-bottom:2px}
+.d .proof{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.d .proof div{padding:20px 20px 20px 0;display:grid;gap:4px}
+.d .proof div+div{padding-left:20px;border-left:1px solid var(--line)}
+.d .proof strong{font-family:var(--display);font-variation-settings:"wdth" 118;font-size:30px;font-weight:700;font-variant-numeric:tabular-nums}
+.d .proof span{font-size:14px;color:var(--muted);line-height:1.4}
+.d .tracks{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.d .track{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:28px;display:grid;gap:16px;align-content:start;min-width:0}
+.d .track .who{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.d .track p.q{font-size:15px;color:var(--muted);border-left:2px solid var(--accent);padding-left:12px}
+.d .track ul{margin:0;padding-left:18px;display:grid;gap:6px;font-size:15px}
+.d .track dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:14px;border-top:1px solid var(--line);padding-top:14px}
+.d .track dt{font-family:var(--mono);font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;padding-top:2px}
+.d .track dd{margin:0}
+.d .score-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:40px;align-items:start}
+.d .sheet{background:var(--surface);border:1px solid var(--line);border-radius:6px;overflow:hidden;min-width:0}
+.d .sheet-head{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:16px 20px;border-bottom:1px solid var(--line);background:var(--accent-soft)}
+.d .sheet-head strong{font-family:var(--display);font-variation-settings:"wdth" 108}
+.d .tablewrap{overflow-x:auto}
+.d table{width:100%;border-collapse:collapse;font-size:15px;min-width:520px}
+.d th,.d td{text-align:left;padding:12px 20px;border-bottom:1px solid var(--line);vertical-align:top}
+.d th{font-family:var(--mono);font-weight:500;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.d td:first-child{font-weight:600}
+.d td.num{font-variant-numeric:tabular-nums}
+.d .pill{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:12px;white-space:nowrap}
+.d .pill::before{content:"";width:9px;height:9px;border-radius:50%;background:currentColor}
+.d .pill.ok{color:var(--ok)}
+.d .pill.warn{color:var(--warn)}
+.d .pill.bad{color:var(--bad)}
+.d .verdict{padding:16px 20px;font-size:15px}
+.d .verdict b{font-family:var(--mono);font-weight:500;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-right:8px}
+.d .record{display:grid;gap:0}
+.d .role{display:grid;grid-template-columns:150px minmax(0,1fr) minmax(0,1.3fr);gap:24px;padding-block:24px;border-top:1px solid var(--line)}
+.d .role:last-child{border-bottom:1px solid var(--line)}
+.d .role .yrs{font-family:var(--mono);font-size:14px;color:var(--muted);font-variant-numeric:tabular-nums}
+.d .role h3{font-size:19px}
+.d .role .org{color:var(--muted);font-size:15px;margin-top:4px}
+.d .role ul{margin:0;padding-left:18px;font-size:15px;display:grid;gap:4px}
+.d .steps{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;counter-reset:s}
+.d .steps li{counter-increment:s;display:grid;gap:8px;padding-top:16px;border-top:2px solid var(--ink)}
+.d .steps li::before{content:"Step " counter(s);font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.d .steps p{color:var(--muted);font-size:15px}
+.d .creds{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.d .creds div{display:grid;gap:6px;align-content:start}
+.d .creds p{font-size:15px}
+.d .creds p+p{margin-top:10px}
+.d .creds b{font-weight:600}
+.d .cert-list{list-style:none;margin:0;padding:0;font-size:15px}
+.d .cert-list li{display:flex;justify-content:space-between;gap:12px;padding-block:8px;border-bottom:1px solid var(--line)}
+.d .cert-list li:first-child{border-top:1px solid var(--line)}
+.d .lecture-list li{flex-direction:column;gap:2px}
+.d .lecture-list li b{font-family:var(--body);font-size:14px}
+.d .cert-list li b{font-family:var(--mono);font-size:13px;font-weight:400;color:var(--muted);font-variant-numeric:tabular-nums}
+.d .contact{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:40px;align-items:end}
+.d .contact h2{font-size:clamp(32px,5vw,56px);font-variation-settings:"wdth" 122}
+.d .mailbox{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:20px;display:grid;gap:12px}
+.d .mailbox code{font-family:var(--mono);font-size:16px;word-break:break-all;user-select:all}
+.d .copy-note{font-size:13px;color:var(--muted);min-height:1.2em}
+.d footer{padding-block:32px;font-size:13px;color:var(--muted);border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media (max-width:900px){.d .tracks,.d .steps,.d .creds{grid-template-columns:1fr}
+.d .score-grid,.d .contact{grid-template-columns:1fr;gap:28px}
+.d .proof{grid-template-columns:1fr 1fr}
+.d .proof div:nth-child(3){padding-left:0;border-left:0}
+.d .proof div:nth-child(n+3){border-top:1px solid var(--line)}
+.d .role{grid-template-columns:1fr;gap:10px}
+.d nav{display:none}}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.d .hero{padding-block:72px 72px}
+.d .ladder{padding:32px}
+@media (prefers-reduced-motion:no-preference){.d .gate.gap i{animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 6px color-mix(in srgb,var(--signal) 25%,transparent)}}}
+:root{
+  --bg:#F2F4F5; --surface:#FFFFFF; --ink:#111820; --muted:#566370; --line:#D3DADF;
+  --accent:#0B6A66; --accent-soft:#DCEDEB; --signal:#C98A00;
+  --ok:#1E7A46; --warn:#B07500; --bad:#B23A2E; --frame:#E3E8EB;
+  --display:"Archivo","Arial Narrow",Arial,sans-serif;
+  --body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
 }
-@media (prefers-reduced-motion:no-preference){
-  .gate.gap i{animation:pulse 2.4s ease-in-out infinite}
-  @keyframes pulse{50%{box-shadow:0 0 0 6px color-mix(in srgb,var(--signal) 25%,transparent)}}
-}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0E1317; --surface:#151C22; --ink:#E7ECEF; --muted:#93A1AD; --line:#26313A;
+  --accent:#4FC2B9; --accent-soft:#16302F; --signal:#E8B23A;
+  --ok:#5BC48A; --warn:#E3AE45; --bad:#E57C70; --frame:#090D10; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1317; --surface:#151C22; --ink:#E7ECEF; --muted:#93A1AD; --line:#26313A;
+  --accent:#4FC2B9; --accent-soft:#16302F; --signal:#E8B23A;
+  --ok:#5BC48A; --warn:#E3AE45; --bad:#E57C70; --frame:#090D10; color-scheme:dark}
+.m,.m *{box-sizing:border-box}
+.m{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;-webkit-text-size-adjust:100%}
+.m .pad{padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+.m a{color:var(--accent)}
+.m :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+.m h1,.m h2,.m h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.05}
+.m h2{font-size:28px;font-variation-settings:"wdth" 112;font-weight:700;letter-spacing:-.01em}
+.m h3{font-size:18px;font-weight:700;font-variation-settings:"wdth" 105}
+.m p{margin:0}
+.m .label{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.m section{padding-block:44px;border-top:1px solid var(--line);display:grid;gap:20px}
+.m .head{display:grid;gap:10px}
+.m .head p{color:var(--muted);font-size:15px}
+.m .top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line);
+  display:flex;justify-content:space-between;align-items:center;padding-block:14px}
+.m .mark{font-family:var(--display);font-weight:800;font-variation-settings:"wdth" 125;font-size:16px;letter-spacing:.02em}
+.m .mark span{color:var(--accent)}
+.m .jump{font-family:var(--mono);font-size:12px;text-decoration:none;color:var(--ink);border:1px solid var(--line);padding:7px 10px;border-radius:4px}
+.m .chips{display:flex;gap:8px;overflow-x:auto;padding-block:10px;scrollbar-width:none;border-bottom:1px solid var(--line)}
+.m .chips::-webkit-scrollbar{display:none}
+.m .chips a{flex:none;font-size:13px;text-decoration:none;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:6px 12px;background:var(--surface)}
+.m .btn{display:flex;justify-content:center;align-items:center;gap:8px;background:var(--ink);color:var(--bg);border:0;width:100%;
+  font:600 16px var(--body);padding:15px 18px;border-radius:6px;text-decoration:none;cursor:pointer;min-height:50px}
+.m .btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--line)}
+.m .hero{padding-block:32px 36px;display:grid;gap:20px}
+.m .hero h1{font-size:clamp(40px,12.5vw,56px);font-weight:800;font-variation-settings:"wdth" 118;letter-spacing:-.02em}
+.m .hero h1 em{font-style:normal;color:var(--accent);display:block}
+.m .lede{font-size:17px}
+.m .lede b{font-weight:600}
+.m .levers{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.m .levers li{font-family:var(--mono);font-size:12px;color:var(--accent);background:var(--accent-soft);padding:5px 10px;border-radius:3px}
+.m .cred{font-size:14px;color:var(--muted)}
+.m .ctas{display:grid;gap:10px}
+.m .proof{display:grid;grid-template-columns:1fr 1fr;border-block:1px solid var(--line)}
+.m .proof div{padding:16px 0;display:grid;gap:2px;min-width:0}
+.m .proof div:nth-child(even){padding-left:16px;border-left:1px solid var(--line)}
+.m .proof div:nth-child(n+3){border-top:1px solid var(--line)}
+.m .proof strong{font-family:var(--display);font-variation-settings:"wdth" 118;font-size:26px;font-weight:700;font-variant-numeric:tabular-nums}
+.m .proof span{font-size:13px;color:var(--muted);line-height:1.35}
+.m .fw{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:16px;display:grid;gap:8px}
+.m .layer{display:grid;gap:2px;padding:12px 14px;border-radius:6px}
+.m .layer b{font-family:var(--display);font-variation-settings:"wdth" 110;font-size:15px}
+.m .layer span{font-size:13px;line-height:1.4;color:var(--muted)}
+.m .l1{background:var(--accent);color:var(--surface);border-radius:18px 18px 6px 6px}
+.m .l1 span{color:var(--surface);opacity:.88}
+.m .l2{background:var(--accent-soft)}
+.m .l3{box-shadow:inset 0 0 0 1px var(--accent)}
+.m .fw .label{margin-top:10px}
+.m .vgates{list-style:none;margin:6px 0 0;padding:0;display:grid;position:relative}
+.m .vgates::before{content:"";position:absolute;left:9px;top:10px;bottom:10px;width:2px;background:var(--line)}
+.m .vg{display:grid;grid-template-columns:20px 1fr;gap:4px 14px;padding-bottom:16px;position:relative}
+.m .vg:last-child{padding-bottom:0}
+.m .vg i{width:20px;height:20px;border-radius:50%;background:var(--surface);border:2px solid var(--muted);position:relative;z-index:1;grid-row:span 2}
+.m .vg strong{font-family:var(--display);font-variation-settings:"wdth" 110;font-size:16px}
+.m .vg strong b{font-family:var(--mono);font-weight:500;font-size:11px;color:var(--muted);margin-right:6px}
+.m .vg span{font-size:13px;color:var(--muted);line-height:1.4}
+.m .vg.gap i{border-color:var(--signal);background:var(--signal)}
+.m .gapnote{grid-column:2;margin:2px 0 16px;border-left:2px dashed var(--signal);padding:6px 0 6px 12px;font-size:13px}
+.m .gapnote .label{color:var(--signal);display:block}
+.m .track{background:var(--surface);border:1px solid var(--line);border-radius:8px}
+.m .track summary{list-style:none;cursor:pointer;padding:18px;display:grid;grid-template-columns:1fr auto;gap:4px 12px;align-items:center}
+.m .track summary::-webkit-details-marker{display:none}
+.m .track summary .who{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.m .track summary h3{grid-column:1}
+.m .track summary .plus{grid-column:2;grid-row:1 / span 2;width:28px;height:28px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;font-family:var(--mono);color:var(--muted);transition:transform .2s}
+.m .track[open] .plus{transform:rotate(45deg)}
+.m .track .body{padding:0 18px 18px;display:grid;gap:14px}
+.m .track p.q{font-size:14px;color:var(--muted);border-left:2px solid var(--accent);padding-left:10px}
+.m .track ul{margin:0;padding-left:18px;display:grid;gap:6px;font-size:15px}
+.m .track dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:6px 12px;font-size:14px;border-top:1px solid var(--line);padding-top:12px}
+.m .track dt{font-family:var(--mono);font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;padding-top:2px}
+.m .track dd{margin:0}
+.m .sheet{background:var(--surface);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.m .sheet-head{padding:14px 16px;background:var(--accent-soft);display:grid;gap:2px}
+.m .sheet-head strong{font-family:var(--display);font-variation-settings:"wdth" 108;font-size:16px}
+.m .crit{padding:12px 16px;border-top:1px solid var(--line);display:grid;grid-template-columns:1fr auto;gap:2px 12px}
+.m .crit b{font-weight:600;font-size:15px}
+.m .crit span{grid-column:1;font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.m .pill{font-style:normal;grid-column:2;grid-row:1 / span 2;align-self:center;display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:11px;white-space:nowrap}
+.m .pill::before{content:"";width:9px;height:9px;border-radius:50%;background:currentColor}
+.m .pill.ok{color:var(--ok)}
+.m .pill.warn{color:var(--warn)}
+.m .pill.bad{color:var(--bad)}
+.m .verdict{padding:14px 16px;border-top:1px solid var(--line);font-size:14px}
+.m .verdict b{display:block;font-family:var(--mono);font-weight:500;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:2px}
+.m .steps{list-style:none;padding:0;margin:0;display:grid;gap:18px;counter-reset:s}
+.m .steps li{counter-increment:s;display:grid;gap:6px;padding-top:12px;border-top:2px solid var(--ink)}
+.m .steps li::before{content:"Step " counter(s);font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.m .steps p{color:var(--muted);font-size:14px}
+.m .record{list-style:none;margin:0;padding:0;display:grid}
+.m .role{display:grid;gap:4px;padding:16px 0 16px 18px;border-left:2px solid var(--line);position:relative}
+.m .role::before{content:"";position:absolute;left:-6px;top:21px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.m .role .yrs{font-family:var(--mono);font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+.m .role h3{font-size:17px}
+.m .role .org{color:var(--accent);font-size:14px;font-weight:600}
+.m .role ul{margin:6px 0 0;padding-left:16px;font-size:14px;display:grid;gap:4px;color:var(--ink)}
+.m .more{border:1px solid var(--line);border-radius:6px;background:var(--surface)}
+.m .more summary{cursor:pointer;padding:12px 14px;font-weight:600;font-size:15px;list-style:none}
+.m .more summary::-webkit-details-marker{display:none}
+.m .more summary::after{content:" +";color:var(--muted)}
+.m .more[open] summary::after{content:" −"}
+.m .more .record{padding:0 14px 6px}
+.m .cgroup{display:grid;gap:8px}
+.m .cgroup p{font-size:15px}
+.m .clist{list-style:none;margin:0;padding:0;font-size:14px}
+.m .clist li{display:flex;justify-content:space-between;gap:12px;padding-block:9px;border-bottom:1px solid var(--line)}
+.m .clist li:first-child{border-top:1px solid var(--line)}
+.m .clist li b{font-family:var(--mono);font-size:12px;font-weight:400;color:var(--muted);text-align:right}
+.m .fold-group{background:var(--surface);border:1px solid var(--line);border-radius:8px}
+.m .fold+.fold{border-top:1px solid var(--line)}
+.m .fold summary{list-style:none;cursor:pointer;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;gap:12px;font-family:var(--display);font-variation-settings:"wdth" 108;font-weight:700;font-size:16px;min-height:52px}
+.m .fold summary::-webkit-details-marker{display:none}
+.m .fold .plus{width:28px;height:28px;flex:none;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;font-family:var(--mono);font-weight:400;color:var(--muted);transition:transform .2s}
+.m .fold[open] .plus{transform:rotate(45deg);color:var(--accent);border-color:var(--accent)}
+.m .fold .cgroup{padding:0 16px 14px}
+.m .mailbox{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:16px;display:grid;gap:10px}
+.m .mailbox code{font-family:var(--mono);font-size:15px;word-break:break-all;user-select:all}
+.m .note{font-size:13px;color:var(--muted);min-height:1.2em}
+.m footer{padding-block:28px 110px;font-size:12px;color:var(--muted);border-top:1px solid var(--line);display:grid;gap:6px}
+.m .actionbar{position:fixed;left:0;right:0;bottom:0;z-index:6;background:var(--surface);border-top:1px solid var(--line);
+  padding:10px max(18px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(18px,env(safe-area-inset-left,0px));
+  display:grid;grid-template-columns:1fr 1fr;gap:10px;align-items:center}
+.m .actionbar .btn{min-height:46px;padding:12px;width:100%}
+.m .actionbar small{font-size:12px;color:var(--muted);line-height:1.3}
+@media (prefers-reduced-motion:no-preference){.m .vg.gap i{animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 6px color-mix(in srgb,var(--signal) 25%,transparent)}}}
 </style>
 </head>
 <body>
-
-
+<div class="d">
 <div class="wrap">
 <header class="top">
   <div class="mark">BEDINI<span>/</span>ADVISORY</div>
@@ -398,13 +519,246 @@ footer{padding-block:32px;font-size:13px;color:var(--muted);border-top:1px solid
 </footer>
 </div>
 
-<script>
-document.getElementById('copyBtn').addEventListener('click',function(){
-  var t=document.getElementById('email').textContent, n=document.getElementById('copyNote');
-  function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById('email'));var s=getSelection();s.removeAllRanges();s.addRange(r);n.textContent='Selected. Press Ctrl+C or Cmd+C to copy.';}
-  try{navigator.clipboard.writeText(t).then(function(){n.textContent='Email copied.';},sel);}catch(e){sel();}
-});
-</script>
 
+
+</body></html>
+</div>
+<div class="m">
+<div class="phone">
+<header class="top pad">
+  <div class="mark">BEDINI<span>/</span>ADVISORY</div>
+  <a class="jump" href="#m-contact">Contact</a>
+</header>
+<nav class="chips pad" aria-label="Sections">
+  <a href="#m-framework">Framework</a><a href="#m-services">Services</a><a href="#m-scorecard">Scorecard</a><a href="#m-record">Track record</a><a href="#m-creds">Credentials</a>
+</nav>
+
+<div class="hero pad">
+  <p class="label">Robotics strategy &amp; operations advisory</p>
+  <h1>Robotics strategy, <em>built to deploy.</em></h1>
+  <p class="lede">I help <b>robotics startups and scale-ups, VCs and private equity firms</b> set the strategy and operating plan behind a robotics business: where to compete, what to build next, how to deploy it, and whether it pays back.</p>
+  <ul class="levers" aria-label="How I make the strategy happen">
+    <li>Operational plans</li><li>Org structure</li><li>Strategy alignment</li><li>Prioritisation</li>
+  </ul>
+  <p class="cred">12 years at Amazon Robotics, ABB Robotics, Tetra Pak and Philip Morris International, plus operating work inside PE portfolios.</p>
+  <div class="ctas">
+    <a class="btn" href="#m-contact">Book a 30-minute diagnostic</a>
+    <a class="btn ghost" href="#m-scorecard">See a sample scorecard</a>
+  </div>
+</div>
+
+<div class="pad">
+  <div class="proof" aria-label="Track record in numbers">
+    <div><strong>$500M+</strong><span>robotics portfolio governed at Amazon</span></div>
+    <div><strong>15%</strong><span>faster deployment from standard gates</span></div>
+    <div><strong>+20%</strong><span>portfolio ARR across 5 PE companies</span></div>
+    <div><strong>12 yrs</strong><span>from R&amp;D to scaled deployment</span></div>
+  </div>
+</div>
+
+<section id="m-framework" class="pad">
+  <div class="head">
+    <p class="label">Advisory framework</p>
+    <h2>Strategy over every gate</h2>
+    <p>Strategy and governance span the whole journey. Hands-on focus is G3 to G5, where deployment stalls.</p>
+  </div>
+  <div class="fw">
+    <div class="layer l1"><b>Strategy</b><span>Where to compete, which customers and use cases first, investment thesis</span></div>
+    <div class="layer l2"><b>Operating plan &amp; prioritisation</b><span>Roadmap, resourcing, intake, KPIs and budget</span></div>
+    <div class="layer l3"><b>Organisation &amp; governance</b><span>Team structure, decision rights, gate reviews</span></div>
+    <p class="label">Execution · stage gates</p>
+    <ol class="vgates">
+      <li class="vg"><i></i><strong><b>G1</b>Prototype</strong><span>Model performs curated tasks in the lab</span></li>
+      <li class="vg"><i></i><strong><b>G2</b>Validation</strong><span>Accuracy, speed and safety against target benchmarks</span></li>
+      <li class="vg gap"><i></i><strong><b>G3</b>Pilot</strong><span>First use case in live operations, on real customer data</span></li>
+      <li class="vg gap"><i></i><strong><b>G4</b>Repeatable use case</strong><span>Same task at new sites with minimal retraining</span></li>
+      <li class="vg gap"><i></i><strong><b>G5</b>Multi use case</strong><span>New tasks added by a generalist model, not custom engineering</span>
+        </li>
+      <li class="vg" style="padding-bottom:0"><span></span><p class="gapnote"><span class="label">Pilot-to-production gap</span>Where physical-AI companies most often stall, and where capital is most often mispriced.</p></li>
+      <li class="vg"><i></i><strong><b>G6</b>Self-improving fleet</strong><span>Data loop lifts accuracy and cuts deployment time</span></li>
+    </ol>
+  </div>
+</section>
+
+<section id="m-services" class="pad">
+  <div class="head">
+    <p class="label">Who I work with</p>
+    <h2>Three seats at the same table</h2>
+    <p>Each engagement is fixed in scope and ends with a decision-ready output. Tap to open.</p>
+  </div>
+  <details class="track" open>
+    <summary><span class="who">Startups &amp; scale-ups</span><h3>Strategy &amp; operating plan</h3><span class="plus" aria-hidden="true">+</span></summary>
+    <div class="body">
+      <p class="q">"We need a first customer pilot that proves the business, and a plan investors will back."</p>
+      <ul>
+        <li>First-customer and pilot design, success criteria, fundraising readiness</li>
+        <li>Segment focus, roadmap priorities, unit economics</li>
+        <li>Deployment playbook, validation gates and KPIs</li>
+        <li>Field and applications team design</li>
+        <li>Go-to-market support for first repeat customers</li>
+        <li>Fractional COO or Chief of Staff, board advisor</li>
+      </ul>
+      <dl><dt>Output</dt><dd>Playbook your team runs without me</dd><dt>Timing</dt><dd>6–12 weeks, or monthly retainer</dd></dl>
+    </div>
+  </details>
+  <details class="track">
+    <summary><span class="who">Venture capital</span><h3>Strategic &amp; deployment due diligence</h3><span class="plus" aria-hidden="true">+</span></summary>
+    <div class="body">
+      <p class="q">"The demo is impressive. Is the market real, and will the model generalise to the next 20 sites?"</p>
+      <ul>
+        <li>Market focus and go-to-market thesis</li>
+        <li>Pilot evidence: accuracy, speed, interventions, uptime</li>
+        <li>Generalisation to new use cases and sites</li>
+        <li>Deployment playbook and field-team maturity</li>
+        <li>Site-level unit economics and customer payback</li>
+        <li>Milestones to tie to the next tranche</li>
+      </ul>
+      <dl><dt>Output</dt><dd>Readiness scorecard and red-flag memo</dd><dt>Timing</dt><dd>2–3 weeks, pre-term-sheet</dd></dl>
+    </div>
+  </details>
+  <details class="track">
+    <summary><span class="who">Private equity</span><h3>Automation strategy &amp; value creation</h3><span class="plus" aria-hidden="true">+</span></summary>
+    <div class="body">
+      <p class="q">"We're buying an integrator. Where is the margin hiding, and where is the risk?"</p>
+      <ul>
+        <li>Investment thesis and buy-and-build strategy</li>
+        <li>Operational diligence on integrators and platforms</li>
+        <li>Project delivery, cost overrun and backlog risk</li>
+        <li>100-day plan and portfolio PMO set-up</li>
+        <li>Board-level reporting on deployment KPIs</li>
+      </ul>
+      <dl><dt>Output</dt><dd>Diligence report and 100-day plan</dd><dt>Timing</dt><dd>3–6 weeks, then optional board role</dd></dl>
+    </div>
+  </details>
+</section>
+
+<section id="m-scorecard" class="pad">
+  <div class="head">
+    <p class="label">What you get</p>
+    <h2>A readiness scorecard, not a slide of opinions</h2>
+    <p>Each rating links to the data behind it. The verdict says what to fund, what to make a milestone, and what to walk away from.</p>
+  </div>
+  <div class="sheet">
+    <div class="sheet-head"><strong>Series A mobile manipulation company</strong><span class="label">Illustrative example</span></div>
+    <div class="crit"><b>Pilot evidence</b><span>3 sites, 11 weeks of production data</span><em class="pill warn">Partial</em></div>
+    <div class="crit"><b>Interventions per robot-hour</b><span>Falling, 0.8 → 0.3 over 8 weeks</span><em class="pill ok">Strong</em></div>
+    <div class="crit"><b>Task accuracy &amp; speed</b><span>96% pick success at 70% of human cycle time</span><em class="pill warn">Partial</em></div>
+    <div class="crit"><b>Generalisation</b><span>1 of 3 new tasks learned without custom tuning</span><em class="pill bad">Gap</em></div>
+    <div class="crit"><b>Time to deploy a new use case</b><span>14 weeks, mostly manual tuning</span><em class="pill warn">Partial</em></div>
+    <div class="crit"><b>Customer payback</b><span>22 months modelled, not yet measured</span><em class="pill warn">Partial</em></div>
+    <div class="crit"><b>Field &amp; support model</b><span>Founders on site for every install</span><em class="pill bad">Gap</em></div>
+    <p class="verdict"><b>Verdict</b>Strong product, not yet a deployable one. Fund, with the second tranche tied to a second use case deployed in under 6 weeks.</p>
+  </div>
+</section>
+
+<section class="pad">
+  <div class="head">
+    <p class="label">How an engagement runs</p>
+    <h2>Scoped up front, priced up front</h2>
+  </div>
+  <ol class="steps">
+    <li><h3>Diagnostic call</h3><p>30 minutes, free. You describe the company or deal; I tell you whether I can help and what I would look at first.</p></li>
+    <li><h3>Fixed-scope engagement</h3><p>Written scope, fee and deadline. Data-room review, site visits and interviews.</p></li>
+    <li><h3>Ongoing advisory</h3><p>Optional. Monthly retainer, board seat, or fractional operating role.</p></li>
+  </ol>
+</section>
+
+<section id="m-record" class="pad">
+  <div class="head">
+    <p class="label">Track record</p>
+    <h2>Strategy, tested on the deployment floor</h2>
+  </div>
+  <ol class="record">
+    <li class="role"><span class="yrs">2026</span><h3>Global Robotics Portfolio &amp; Solution Manager</h3><span class="org">ABB Robotics</span>
+      <ul><li>Led deployment and go-to-market strategy for a $10M first-of-kind autonomous mobile manipulator</li><li>Built the global product and deployment team, gates and KPIs</li></ul></li>
+    <li class="role"><span class="yrs">2024 – 2025</span><h3>Portfolio Director, Product Strategy &amp; Operations</h3><span class="org">YFM Private Equity</span>
+      <ul><li>Strategy and value-creation plans for 5 portfolio companies (£5–20M ARR)</li><li>Drove 20–30% annual growth targets; supported a Series A sale</li></ul></li>
+    <li class="role"><span class="yrs">2019 – 2024</span><h3>Global Robotics PMO Manager, Strategy &amp; Operations</h3><span class="org">Amazon Robotics</span>
+      <ul><li>Strategy and operations for a $500M+ robotics portfolio</li><li>2-year deployment plan for a 500+ FTE team; built a 12-person PMO</li><li>$100M+ a year of UK and EU deployments; cut deployment time 15%</li></ul></li>
+  </ol>
+  <details class="more">
+    <summary>Earlier and advisory roles</summary>
+    <ol class="record">
+      <li class="role"><span class="yrs">2025</span><h3>Senior Robotics Product Strategy Consultant</h3><span class="org">University of Cambridge</span>
+        <ul><li>Productisation advice for research teams and robotics startups</li></ul></li>
+      <li class="role"><span class="yrs">2024</span><h3>Robotics Consultant</h3><span class="org">Cambridge Innovation Capital</span>
+        <ul><li>Advised a Cambridge deep-tech VC on robotics</li></ul></li>
+      <li class="role"><span class="yrs">2014 – 2019</span><h3>Project Manager, R&amp;D Automation</h3><span class="org">Tetra Pak</span>
+        <ul><li>€5M+ automation launches across Italy, Sweden and Mexico</li></ul></li>
+      <li class="role"><span class="yrs">2014</span><h3>Project Manager, Product Industrialisation</h3><span class="org">Philip Morris International</span>
+        <ul><li>Global KPI frameworks and processes for large launches</li></ul></li>
+    </ol>
+  </details>
+</section>
+
+<section id="m-creds" class="pad">
+  <div class="head">
+    <p class="label">Credentials</p>
+    <h2>Education &amp; qualifications</h2>
+  </div>
+  <div class="fold-group">
+  <details class="fold">
+    <summary><span>Education</span><span class="plus" aria-hidden="true">+</span></summary>
+    <div class="cgroup">
+      <p><b>MEng, Industrial Management Engineering</b><br>Bologna &amp; Imperial College London · First Class (110/110)</p>
+      <p><b>MRes, Innovation &amp; Entrepreneurship</b><br>LUISS &amp; Imperial College London · PhD track</p>
+    </div>
+  </details>
+  <details class="fold">
+    <summary><span>Guest lecturer</span><span class="plus" aria-hidden="true">+</span></summary>
+    <div class="cgroup">
+      <ul class="clist"><li><span>LUISS Business School</span><b>Innovation mgmt</b></li><li><span>Milano-Bicocca</span><b>Strategic planning</b></li><li><span>Ca' Foscari Venice</span><b>Data management</b></li></ul>
+    </div>
+  </details>
+  <details class="fold">
+    <summary><span>Certifications</span><span class="plus" aria-hidden="true">+</span></summary>
+    <div class="cgroup">
+      <ul class="clist"><li><span>UK Private Capital Foundation</span><b>2024</b></li><li><span>Leadership &amp; Change, LSE</span><b>2023</b></li><li><span>PMP</span><b>2018</b></li><li><span>Change Management</span><b>2018</b></li><li><span>Risk Management</span><b>2017</b></li></ul>
+    </div>
+  </details>
+  <details class="fold">
+    <summary><span>Languages</span><span class="plus" aria-hidden="true">+</span></summary>
+    <div class="cgroup">
+      <ul class="clist"><li><span>English</span><b>Full professional</b></li><li><span>Italian</span><b>Native</b></li><li><span>Spanish</span><b>Professional</b></li></ul>
+      <p style="color:var(--muted);font-size:14px">British and Italian citizen, working across the UK and EU.</p>
+    </div>
+  </details>
+  </div>
+</section>
+
+<section id="m-contact" class="pad">
+  <div class="head">
+    <p class="label">Contact</p>
+    <h2>Have a robotics deal or deployment on the table?</h2>
+    <p>Send two lines on the company and the decision you're facing. I reply within two working days.</p>
+  </div>
+  <div class="mailbox">
+    <span class="label">Email</span>
+    <code id="email-m">advisory@antonellabedini.com</code>
+    <button class="btn" id="copyBtn-m" type="button">Copy email</button>
+    <a class="btn ghost" href="mailto:advisory@antonellabedini.com">Open mail app</a>
+    <a class="btn ghost" href="https://www.linkedin.com/in/antonella-bedini-a106985a/" target="_blank" rel="noopener">LinkedIn profile</a>
+    <p class="note" id="copyNote-m" aria-live="polite"></p>
+  </div>
+</section>
+
+<footer class="pad">
+  <span>© 2026 Antonella Bedini · Independent advisory</span>
+  <span>Views are my own and not those of any current or past employer.</span>
+</footer>
+</div>
+
+<div class="actionbar">
+  <a class="btn ghost" href="#m-contact">Contact</a>
+  <a class="btn" href="mailto:advisory@antonellabedini.com?subject=30-minute%20diagnostic%20call">Book a call</a>
+</div>
+</div>
+<script>
+function wire(b,e,n){var btn=document.getElementById(b);if(!btn)return;btn.addEventListener('click',function(){
+  var el=document.getElementById(e),note=document.getElementById(n),t=el.textContent;
+  function sel(){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);note.textContent='Selected. Press Ctrl+C or Cmd+C to copy.';}
+  try{navigator.clipboard.writeText(t).then(function(){note.textContent='Email copied.';},sel);}catch(x){sel();}});}
+wire('copyBtn','email','copyNote');wire('copyBtn-m','email-m','copyNote-m');
+</script>
 </body>
 </html>
