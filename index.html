@@ -350,7 +350,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   <ul class="levers" aria-label="How I make the strategy happen">
     <li>Operational plans</li><li>Organisational structure</li><li>Strategy alignment</li><li>Prioritisation mechanisms</li>
   </ul>
-  <p class="cred-line">12 years deploying robotics, physical AI and automation at Amazon Robotics, ABB Robotics, Tetra Pak and Philip Morris International, plus hands-on operating work inside private-equity portfolios.</p>
+  <p class="cred-line"><span class="xp-years">12</span> years deploying robotics, physical AI and automation at Amazon Robotics, ABB Robotics, Tetra Pak and Philip Morris International, plus hands-on operating work inside private-equity portfolios.</p>
   <div class="cta-row">
     <a class="btn" href="#contact">Book a 30-minute diagnostic</a>
     <a class="btn ghost" href="#scorecard">See a sample readiness scorecard</a>
@@ -385,7 +385,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   <div><strong>$500M+</strong><span>global robotics and physical-AI portfolio governed at Amazon Robotics</span></div>
   <div><strong>15%</strong><span>faster deployment from standardised gates and risk control</span></div>
   <div><strong>+20%</strong><span>portfolio ARR across 5 PE-backed companies</span></div>
-  <div><strong>12 yrs</strong><span>taking automation from R&amp;D to scaled deployment</span></div>
+  <div><strong><span class="xp-years">12</span> yrs</strong><span>taking automation from R&amp;D to scaled deployment</span></div>
 </div>
 
 <section id="services">
@@ -567,7 +567,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   <ul class="levers" aria-label="How I make the strategy happen">
     <li>Operational plans</li><li>Org structure</li><li>Strategy alignment</li><li>Prioritisation</li>
   </ul>
-  <p class="cred">12 years deploying robotics, physical AI and automation at Amazon Robotics, ABB Robotics, Tetra Pak and Philip Morris International, plus operating work inside PE portfolios.</p>
+  <p class="cred"><span class="xp-years">12</span> years deploying robotics, physical AI and automation at Amazon Robotics, ABB Robotics, Tetra Pak and Philip Morris International, plus operating work inside PE portfolios.</p>
   <div class="ctas">
     <a class="btn" href="#m-contact">Book a 30-minute diagnostic</a>
     <a class="btn ghost" href="#m-scorecard">See a sample scorecard</a>
@@ -579,7 +579,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     <div><strong>$500M+</strong><span>robotics and physical-AI portfolio governed at Amazon</span></div>
     <div><strong>15%</strong><span>faster deployment from standard gates</span></div>
     <div><strong>+20%</strong><span>portfolio ARR across 5 PE companies</span></div>
-    <div><strong>12 yrs</strong><span>from R&amp;D to scaled deployment</span></div>
+    <div><strong><span class="xp-years">12</span> yrs</strong><span>from R&amp;D to scaled deployment</span></div>
   </div>
 </div>
 
@@ -783,6 +783,7 @@ function wire(b,e,n){var btn=document.getElementById(b);if(!btn)return;btn.addEv
   function sel(){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);note.textContent='Selected. Press Ctrl+C or Cmd+C to copy.';}
   try{navigator.clipboard.writeText(t).then(function(){note.textContent='Email copied.';},sel);}catch(x){sel();}});}
 wire('copyBtn','email','copyNote');
+document.querySelectorAll('.xp-years').forEach(function(e){var n=new Date().getFullYear()-2014;if(n>=12)e.textContent=n;});
 document.querySelectorAll('.toggle-all').forEach(function(b){b.addEventListener('click',function(){
   var box=document.getElementById(b.dataset.target),ds=box.querySelectorAll('details'),open=b.textContent==='Open all';
   ds.forEach(function(d){d.open=open});b.textContent=open?'Close all':'Open all';});});wire('copyBtn-m','email-m','copyNote-m');
