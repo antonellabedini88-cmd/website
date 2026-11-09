@@ -133,28 +133,38 @@ body{background:var(--bg)}
 .d .pill.bad{color:var(--bad)}
 .d .verdict{padding:16px 20px;font-size:15px}
 .d .verdict b{font-family:var(--mono);font-weight:500;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-right:8px}
-.d .record{display:grid;gap:0}
-.d .role{display:grid;grid-template-columns:150px minmax(0,1fr) minmax(0,1.3fr);gap:24px;padding-block:24px;border-top:1px solid var(--line)}
-.d .role:last-child{border-bottom:1px solid var(--line)}
+.d .fold-bar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.d .toggle-all{font:500 13px var(--mono);color:var(--accent);background:transparent;border:1px solid var(--line);border-radius:4px;padding:7px 12px;cursor:pointer}
+.d .toggle-all:hover{border-color:var(--accent)}
+.d .plus{width:30px;height:30px;flex:none;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;font-family:var(--mono);font-size:16px;color:var(--muted);transition:transform .2s,color .2s,border-color .2s}
+.d details[open]>summary .plus{transform:rotate(45deg);color:var(--accent);border-color:var(--accent)}
+.d summary{list-style:none;cursor:pointer}
+.d summary::-webkit-details-marker{display:none}
+.d summary:hover .plus{border-color:var(--accent);color:var(--accent)}
+.d .record{display:grid;gap:0;border-bottom:1px solid var(--line)}
+.d .role{border-top:1px solid var(--line)}
+.d .role summary{display:grid;grid-template-columns:150px minmax(0,1fr) auto;gap:24px;align-items:center;padding-block:18px}
 .d .role .yrs{font-family:var(--mono);font-size:14px;color:var(--muted);font-variant-numeric:tabular-nums}
+.d .role .rt{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;min-width:0}
 .d .role h3{font-size:19px}
-.d .role .org{color:var(--muted);font-size:15px;margin-top:4px}
-.d .role ul{margin:0;padding-left:18px;font-size:15px;display:grid;gap:4px}
+.d .role .org{color:var(--accent);font-size:15px;font-weight:600}
+.d .role ul{margin:0 54px 22px 174px;padding-left:18px;font-size:15px;display:grid;gap:4px;max-width:70ch}
 .d .steps{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;counter-reset:s}
 .d .steps li{counter-increment:s;display:grid;gap:8px;padding-top:16px;border-top:2px solid var(--ink)}
 .d .steps li::before{content:"Step " counter(s);font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
 .d .steps p{color:var(--muted);font-size:15px}
-.d .creds{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-.d .creds div{display:grid;gap:6px;align-content:start}
-.d .creds p{font-size:15px}
-.d .creds p+p{margin-top:10px}
-.d .creds b{font-weight:600}
+.d .cred-folds{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:start}
+.d .cfold{background:var(--surface);border:1px solid var(--line);border-radius:6px;min-width:0}
+.d .cfold summary{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:14px;align-items:center;padding:16px 18px}
+.d .cfold summary>span:first-child{font-family:var(--display);font-variation-settings:"wdth" 108;font-weight:700;font-size:17px}
+.d .cfold .hint{font-size:14px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.d .cfold[open] .hint{visibility:hidden}
+.d .cbody{padding:0 18px 18px;display:grid;gap:10px;font-size:15px}
+.d .cbody b{font-weight:600}
 .d .cert-list{list-style:none;margin:0;padding:0;font-size:15px}
 .d .cert-list li{display:flex;justify-content:space-between;gap:12px;padding-block:8px;border-bottom:1px solid var(--line)}
 .d .cert-list li:first-child{border-top:1px solid var(--line)}
-.d .lecture-list li{flex-direction:column;gap:2px}
-.d .lecture-list li b{font-family:var(--body);font-size:14px}
-.d .cert-list li b{font-family:var(--mono);font-size:13px;font-weight:400;color:var(--muted);font-variant-numeric:tabular-nums}
+.d .cert-list li b{font-family:var(--mono);font-size:13px;font-weight:400;color:var(--muted);font-variant-numeric:tabular-nums;text-align:right}
 .d .contact{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:40px;align-items:end}
 .d .contact h2{font-size:clamp(32px,5vw,56px);font-variation-settings:"wdth" 122}
 .d .mailbox{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:20px;display:grid;gap:12px}
@@ -166,7 +176,12 @@ body{background:var(--bg)}
 .d .proof{grid-template-columns:1fr 1fr}
 .d .proof div:nth-child(3){padding-left:0;border-left:0}
 .d .proof div:nth-child(n+3){border-top:1px solid var(--line)}
-.d .role{grid-template-columns:1fr;gap:10px}
+.d .role summary{grid-template-columns:1fr auto;gap:4px 16px}
+.d .role .yrs{grid-column:1}
+.d .role .rt{grid-column:1}
+.d .role .plus{grid-column:2;grid-row:1 / span 2}
+.d .role ul{margin:0 0 18px;padding-left:18px}
+.d .cred-folds{grid-template-columns:1fr}
 .d nav{display:none}}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
 .d .hero{padding-block:72px 72px}
@@ -278,19 +293,19 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .m .steps li{counter-increment:s;display:grid;gap:6px;padding-top:12px;border-top:2px solid var(--ink)}
 .m .steps li::before{content:"Step " counter(s);font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
 .m .steps p{color:var(--muted);font-size:14px}
-.m .record{list-style:none;margin:0;padding:0;display:grid}
-.m .role{display:grid;gap:4px;padding:16px 0 16px 18px;border-left:2px solid var(--line);position:relative}
-.m .role::before{content:"";position:absolute;left:-6px;top:21px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
-.m .role .yrs{font-family:var(--mono);font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
-.m .role h3{font-size:17px}
-.m .role .org{color:var(--accent);font-size:14px;font-weight:600}
-.m .role ul{margin:6px 0 0;padding-left:16px;font-size:14px;display:grid;gap:4px;color:var(--ink)}
-.m .more{border:1px solid var(--line);border-radius:6px;background:var(--surface)}
-.m .more summary{cursor:pointer;padding:12px 14px;font-weight:600;font-size:15px;list-style:none}
-.m .more summary::-webkit-details-marker{display:none}
-.m .more summary::after{content:" +";color:var(--muted)}
-.m .more[open] summary::after{content:" −"}
-.m .more .record{padding:0 14px 6px}
+.m .fold-bar{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.m .toggle-all{font:500 12px var(--mono);color:var(--accent);background:transparent;border:1px solid var(--line);border-radius:4px;padding:7px 10px;cursor:pointer;min-height:34px}
+.m .record{display:grid}
+.m .role{border-left:2px solid var(--line);position:relative}
+.m .role::before{content:"";position:absolute;left:-6px;top:22px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.m .role summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:1fr auto;gap:2px 12px;align-items:center;padding:14px 0 14px 18px}
+.m .role summary::-webkit-details-marker{display:none}
+.m .role .yrs{grid-column:1;font-family:var(--mono);font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+.m .role h3{grid-column:1;font-size:16px}
+.m .role .org{grid-column:1;color:var(--accent);font-size:14px;font-weight:600}
+.m .role .plus{grid-column:2;grid-row:1 / span 3;width:28px;height:28px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;font-family:var(--mono);color:var(--muted);transition:transform .2s}
+.m .role[open] .plus{transform:rotate(45deg);color:var(--accent);border-color:var(--accent)}
+.m .role ul{margin:0 0 14px 18px;padding-left:16px;font-size:14px;display:grid;gap:4px}
 .m .cgroup{display:grid;gap:8px}
 .m .cgroup p{font-size:15px}
 .m .clist{list-style:none;margin:0;padding:0;font-size:14px}
@@ -323,7 +338,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 <header class="top">
   <div class="mark">BEDINI<span>/</span>ADVISORY</div>
   <nav aria-label="Sections">
-    <a href="#services">Services</a><a href="#scorecard">Scorecard</a><a href="#record">Track record</a><a href="#contact">Contact</a>
+    <a href="#services">Services</a><a href="#scorecard">Scorecard</a><a href="#record">Track record</a><a href="#creds">Credentials</a><a href="#contact">Contact</a>
   </nav>
   <a class="btn" href="#contact">Book a diagnostic call</a>
 </header>
@@ -470,30 +485,41 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     <h2>Strategy, tested on the deployment floor</h2>
     <p>Every role has combined the plan and its delivery: deciding where automation should go next, then making it run at scale and pay back.</p>
   </div>
-  <div class="record">
-    <div class="role"><span class="yrs">2026</span><div><h3>Global Robotics Portfolio &amp; Solution Manager</h3><p class="org">ABB Robotics</p></div>
-      <ul><li>Led deployment and go-to-market strategy for a $10M first-of-kind autonomous mobile manipulator, from prototype to launch</li><li>Built the global product and deployment team, validation gates and KPI framework</li></ul></div>
-    <div class="role"><span class="yrs">2025</span><div><h3>Senior Robotics Product Strategy Consultant</h3><p class="org">University of Cambridge</p></div>
-      <ul><li>Advised research teams and robotics startups on productisation: use cases, MVP, market entry and roadmap</li></ul></div>
-    <div class="role"><span class="yrs">2024 – 2025</span><div><h3>Portfolio Director, Product Strategy &amp; Operations</h3><p class="org">YFM Private Equity</p></div>
-      <ul><li>Set strategy and value-creation plans for 5 portfolio companies (£5–20M ARR) as operator and board advisor</li><li>Drove 20–30% annual growth targets and supported the sale of a Series A company</li></ul></div>
-    <div class="role"><span class="yrs">2024</span><div><h3>Robotics Consultant</h3><p class="org">Cambridge Innovation Capital (CIC)</p></div>
-      <ul><li>Advised a Cambridge deep-tech venture capital investor on robotics</li></ul></div>
-    <div class="role"><span class="yrs">2019 – 2024</span><div><h3>Global Robotics PMO Manager, Strategy &amp; Operations</h3><p class="org">Amazon Robotics</p></div>
-      <ul><li>Ran strategy and operations for a $500M+ robotics portfolio: intake, prioritisation, financial review and the yearly operating plan</li><li>Aligned leadership on headcount and a 2-year deployment plan for a 500+ FTE global team; built a 12-person PMO</li><li>Delivered $100M+ a year of UK and EU deployments, including $35M+ programmes; cut deployment time 15%</li></ul></div>
-    <div class="role"><span class="yrs">2014 – 2019</span><div><h3>Project Manager, R&amp;D Automation</h3><p class="org">Tetra Pak</p></div>
-      <ul><li>Took €5M+ automation launches from R&amp;D to global deployment, across Italy, Sweden and Mexico</li></ul></div>
-    <div class="role"><span class="yrs">2014</span><div><h3>Project Manager, Product Industrialisation</h3><p class="org">Philip Morris International</p></div>
-      <ul><li>Built global KPI frameworks, processes and IT systems for large-scale product launches</li></ul></div>
+  <div class="fold-bar"><span class="label">7 roles · 2014 to today · open a role for detail</span><button class="toggle-all" type="button" data-target="d-record">Open all</button></div>
+  <div class="record" id="d-record">
+    <details class="role"><summary><span class="yrs">2026</span><span class="rt"><h3>Global Robotics Portfolio &amp; Solution Manager</h3><span class="org">ABB Robotics</span></span><span class="plus" aria-hidden="true">+</span></summary>
+      <ul><li>Led deployment and go-to-market strategy for a $10M first-of-kind autonomous mobile manipulator, from prototype to launch</li><li>Built the global product and deployment team, validation gates and KPI framework</li></ul></details>
+    <details class="role"><summary><span class="yrs">2025</span><span class="rt"><h3>Senior Robotics Product Strategy Consultant</h3><span class="org">University of Cambridge</span></span><span class="plus" aria-hidden="true">+</span></summary>
+      <ul><li>Advised research teams and robotics startups on productisation: use cases, MVP, market entry and roadmap</li></ul></details>
+    <details class="role"><summary><span class="yrs">2024 – 2025</span><span class="rt"><h3>Portfolio Director, Product Strategy &amp; Operations</h3><span class="org">YFM Private Equity</span></span><span class="plus" aria-hidden="true">+</span></summary>
+      <ul><li>Set strategy and value-creation plans for 5 portfolio companies (£5–20M ARR) as operator and board advisor</li><li>Drove 20–30% annual growth targets and supported the sale of a Series A company</li></ul></details>
+    <details class="role"><summary><span class="yrs">2024</span><span class="rt"><h3>Robotics Consultant</h3><span class="org">Cambridge Innovation Capital (CIC)</span></span><span class="plus" aria-hidden="true">+</span></summary>
+      <ul><li>Advised a Cambridge deep-tech venture capital investor on robotics</li></ul></details>
+    <details class="role"><summary><span class="yrs">2019 – 2024</span><span class="rt"><h3>Global Robotics PMO Manager, Strategy &amp; Operations</h3><span class="org">Amazon Robotics</span></span><span class="plus" aria-hidden="true">+</span></summary>
+      <ul><li>Ran strategy and operations for a $500M+ robotics portfolio: intake, prioritisation, financial review and the yearly operating plan</li><li>Aligned leadership on headcount and a 2-year deployment plan for a 500+ FTE global team; built a 12-person PMO</li><li>Delivered $100M+ a year of UK and EU deployments, including $35M+ programmes; cut deployment time 15%</li></ul></details>
+    <details class="role"><summary><span class="yrs">2014 – 2019</span><span class="rt"><h3>Project Manager, R&amp;D Automation</h3><span class="org">Tetra Pak</span></span><span class="plus" aria-hidden="true">+</span></summary>
+      <ul><li>Took €5M+ automation launches from R&amp;D to global deployment, across Italy, Sweden and Mexico</li></ul></details>
+    <details class="role"><summary><span class="yrs">2014</span><span class="rt"><h3>Project Manager, Product Industrialisation</h3><span class="org">Philip Morris International</span></span><span class="plus" aria-hidden="true">+</span></summary>
+      <ul><li>Built global KPI frameworks, processes and IT systems for large-scale product launches</li></ul></details>
   </div>
 </section>
 
 
-<section>
-  <div class="creds">
-    <div><p class="label">Education</p><p><b>MEng, Industrial Management Engineering</b><br>Bologna &amp; Imperial College London · First Class Honours (110/110)</p><p><b>MRes, Innovation &amp; Entrepreneurship</b><br>LUISS &amp; Imperial College London · PhD track</p><p><b>Guest lecturer</b></p><ul class="cert-list lecture-list" style="margin-top:8px"><li><span>LUISS Business School</span><b>Innovation management</b></li><li><span>University of Milano-Bicocca</span><b>Strategic planning</b></li><li><span>Ca' Foscari University of Venice</span><b>Data management</b></li></ul></div>
-    <div><p class="label">Certifications</p><ul class="cert-list"><li><span>Foundation certificate, UK Private Capital</span><b>2024</b></li><li><span>Leadership &amp; Change, LSE</span><b>2023</b></li><li><span>Project Management Professional (PMP)</span><b>2018</b></li><li><span>Change Management</span><b>2018</b></li><li><span>Risk Management</span><b>2017</b></li></ul></div>
-    <div><p class="label">Working languages</p><ul class="cert-list"><li><span>English</span><b>Full professional</b></li><li><span>Italian</span><b>Native</b></li><li><span>Spanish</span><b>Professional</b></li></ul><p style="margin-top:12px;color:var(--muted)">British and Italian citizen, working across the UK and EU.</p></div>
+<section id="creds">
+  <div class="section-head">
+    <p class="label">Background</p>
+    <h2>Education &amp; credentials</h2>
+  </div>
+  <div class="fold-bar"><span class="label">Imperial College London · PMP · English, Italian, Spanish</span><button class="toggle-all" type="button" data-target="d-creds">Open all</button></div>
+  <div class="cred-folds" id="d-creds">
+    <details class="cfold"><summary><span>Education</span><span class="hint">MEng and MRes, Imperial College London</span><span class="plus" aria-hidden="true">+</span></summary>
+      <div class="cbody"><p><b>MEng, Industrial Management Engineering</b><br>Bologna &amp; Imperial College London · First Class Honours (110/110)</p><p><b>MRes, Innovation &amp; Entrepreneurship</b><br>LUISS &amp; Imperial College London · PhD track</p></div></details>
+    <details class="cfold"><summary><span>Guest lecturer</span><span class="hint">LUISS, Milano-Bicocca, Ca' Foscari</span><span class="plus" aria-hidden="true">+</span></summary>
+      <div class="cbody"><ul class="cert-list"><li><span>LUISS Business School</span><b>Innovation management</b></li><li><span>University of Milano-Bicocca</span><b>Strategic planning</b></li><li><span>Ca' Foscari University of Venice</span><b>Data management</b></li></ul></div></details>
+    <details class="cfold"><summary><span>Certifications</span><span class="hint">PMP, LSE, UK Private Capital</span><span class="plus" aria-hidden="true">+</span></summary>
+      <div class="cbody"><ul class="cert-list"><li><span>Foundation certificate, UK Private Capital</span><b>2024</b></li><li><span>Leadership &amp; Change, LSE</span><b>2023</b></li><li><span>Project Management Professional (PMP)</span><b>2018</b></li><li><span>Change Management</span><b>2018</b></li><li><span>Risk Management</span><b>2017</b></li></ul></div></details>
+    <details class="cfold"><summary><span>Working languages</span><span class="hint">English, Italian, Spanish</span><span class="plus" aria-hidden="true">+</span></summary>
+      <div class="cbody"><ul class="cert-list"><li><span>English</span><b>Full professional</b></li><li><span>Italian</span><b>Native</b></li><li><span>Spanish</span><b>Professional</b></li></ul><p style="margin-top:12px;color:var(--muted)">British and Italian citizen, working across the UK and EU.</p></div></details>
   </div>
 </section>
 
@@ -518,6 +544,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   <span>Views are my own and not those of any current or past employer.</span>
 </footer>
 </div>
+
 
 
 
@@ -668,27 +695,23 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     <p class="label">Track record</p>
     <h2>Strategy, tested on the deployment floor</h2>
   </div>
-  <ol class="record">
-    <li class="role"><span class="yrs">2026</span><h3>Global Robotics Portfolio &amp; Solution Manager</h3><span class="org">ABB Robotics</span>
-      <ul><li>Led deployment and go-to-market strategy for a $10M first-of-kind autonomous mobile manipulator</li><li>Built the global product and deployment team, gates and KPIs</li></ul></li>
-    <li class="role"><span class="yrs">2024 – 2025</span><h3>Portfolio Director, Product Strategy &amp; Operations</h3><span class="org">YFM Private Equity</span>
-      <ul><li>Strategy and value-creation plans for 5 portfolio companies (£5–20M ARR)</li><li>Drove 20–30% annual growth targets; supported a Series A sale</li></ul></li>
-    <li class="role"><span class="yrs">2019 – 2024</span><h3>Global Robotics PMO Manager, Strategy &amp; Operations</h3><span class="org">Amazon Robotics</span>
-      <ul><li>Strategy and operations for a $500M+ robotics portfolio</li><li>2-year deployment plan for a 500+ FTE team; built a 12-person PMO</li><li>$100M+ a year of UK and EU deployments; cut deployment time 15%</li></ul></li>
-  </ol>
-  <details class="more">
-    <summary>Earlier and advisory roles</summary>
-    <ol class="record">
-      <li class="role"><span class="yrs">2025</span><h3>Senior Robotics Product Strategy Consultant</h3><span class="org">University of Cambridge</span>
-        <ul><li>Productisation advice for research teams and robotics startups</li></ul></li>
-      <li class="role"><span class="yrs">2024</span><h3>Robotics Consultant</h3><span class="org">Cambridge Innovation Capital</span>
-        <ul><li>Advised a Cambridge deep-tech VC on robotics</li></ul></li>
-      <li class="role"><span class="yrs">2014 – 2019</span><h3>Project Manager, R&amp;D Automation</h3><span class="org">Tetra Pak</span>
-        <ul><li>€5M+ automation launches across Italy, Sweden and Mexico</li></ul></li>
-      <li class="role"><span class="yrs">2014</span><h3>Project Manager, Product Industrialisation</h3><span class="org">Philip Morris International</span>
-        <ul><li>Global KPI frameworks and processes for large launches</li></ul></li>
-    </ol>
-  </details>
+  <div class="fold-bar"><span class="label">7 roles · tap for detail</span><button class="toggle-all" type="button" data-target="m-roles">Open all</button></div>
+  <div class="record" id="m-roles">
+    <details class="role"><summary><span class="yrs">2026</span><h3>Global Robotics Portfolio &amp; Solution Manager</h3><span class="org">ABB Robotics</span><span class="plus" aria-hidden="true">+</span></summary>
+      <ul><li>Led deployment and go-to-market strategy for a $10M first-of-kind autonomous mobile manipulator</li><li>Built the global product and deployment team, gates and KPIs</li></ul></details>
+    <details class="role"><summary><span class="yrs">2025</span><h3>Senior Robotics Product Strategy Consultant</h3><span class="org">University of Cambridge</span><span class="plus" aria-hidden="true">+</span></summary>
+      <ul><li>Productisation advice for research teams and robotics startups: use cases, MVP, market entry</li></ul></details>
+    <details class="role"><summary><span class="yrs">2024 – 2025</span><h3>Portfolio Director, Product Strategy &amp; Operations</h3><span class="org">YFM Private Equity</span><span class="plus" aria-hidden="true">+</span></summary>
+      <ul><li>Strategy and value-creation plans for 5 portfolio companies (£5–20M ARR)</li><li>Drove 20–30% annual growth targets; supported a Series A sale</li></ul></details>
+    <details class="role"><summary><span class="yrs">2024</span><h3>Robotics Consultant</h3><span class="org">Cambridge Innovation Capital (CIC)</span><span class="plus" aria-hidden="true">+</span></summary>
+      <ul><li>Advised a Cambridge deep-tech VC on robotics</li></ul></details>
+    <details class="role"><summary><span class="yrs">2019 – 2024</span><h3>Global Robotics PMO Manager, Strategy &amp; Operations</h3><span class="org">Amazon Robotics</span><span class="plus" aria-hidden="true">+</span></summary>
+      <ul><li>Strategy and operations for a $500M+ robotics portfolio</li><li>2-year deployment plan for a 500+ FTE team; built a 12-person PMO</li><li>$100M+ a year of UK and EU deployments; cut deployment time 15%</li></ul></details>
+    <details class="role"><summary><span class="yrs">2014 – 2019</span><h3>Project Manager, R&amp;D Automation</h3><span class="org">Tetra Pak</span><span class="plus" aria-hidden="true">+</span></summary>
+      <ul><li>€5M+ automation launches across Italy, Sweden and Mexico</li></ul></details>
+    <details class="role"><summary><span class="yrs">2014</span><h3>Project Manager, Product Industrialisation</h3><span class="org">Philip Morris International</span><span class="plus" aria-hidden="true">+</span></summary>
+      <ul><li>Global KPI frameworks and processes for large launches</li></ul></details>
+  </div>
 </section>
 
 <section id="m-creds" class="pad">
@@ -696,7 +719,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     <p class="label">Credentials</p>
     <h2>Education &amp; qualifications</h2>
   </div>
-  <div class="fold-group">
+  <div class="fold-bar"><span class="label">4 topics · tap to open</span><button class="toggle-all" type="button" data-target="m-credfolds">Open all</button></div>
+  <div class="fold-group" id="m-credfolds">
   <details class="fold">
     <summary><span>Education</span><span class="plus" aria-hidden="true">+</span></summary>
     <div class="cgroup">
@@ -758,7 +782,10 @@ function wire(b,e,n){var btn=document.getElementById(b);if(!btn)return;btn.addEv
   var el=document.getElementById(e),note=document.getElementById(n),t=el.textContent;
   function sel(){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);note.textContent='Selected. Press Ctrl+C or Cmd+C to copy.';}
   try{navigator.clipboard.writeText(t).then(function(){note.textContent='Email copied.';},sel);}catch(x){sel();}});}
-wire('copyBtn','email','copyNote');wire('copyBtn-m','email-m','copyNote-m');
+wire('copyBtn','email','copyNote');
+document.querySelectorAll('.toggle-all').forEach(function(b){b.addEventListener('click',function(){
+  var box=document.getElementById(b.dataset.target),ds=box.querySelectorAll('details'),open=b.textContent==='Open all';
+  ds.forEach(function(d){d.open=open});b.textContent=open?'Close all':'Open all';});});wire('copyBtn-m','email-m','copyNote-m');
 </script>
 </body>
 </html>
