@@ -368,6 +368,10 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .m .vg .gd .gp{width:22px;height:22px;flex:none;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;font-family:var(--mono);font-size:13px;color:var(--muted);transition:transform .2s}
 .m .vg .gd[open] .gp{transform:rotate(45deg);color:var(--accent);border-color:var(--accent)}
 .m .vg .gd>span{display:block;margin-top:4px}
+.m .gapnote.gd summary{display:flex;justify-content:space-between;align-items:center;gap:10px;list-style:none;cursor:pointer}
+.m .gapnote.gd summary::-webkit-details-marker{display:none}
+.m .gapnote.gd .label{display:inline}
+.m .gapnote.gd>span{display:block;margin-top:4px}
 </style>
 </head>
 <body>
@@ -650,7 +654,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
       <li class="vg gap"><i></i><details class="gd"><summary><strong><b>G4</b>Repeatable use case</strong><span class="gp" aria-hidden="true">+</span></summary><span>Same task at new sites with minimal retraining</span></details></li>
       <li class="vg gap"><i></i><details class="gd"><summary><strong><b>G5</b>Multi use case</strong><span class="gp" aria-hidden="true">+</span></summary><span>New tasks added by a generalist model, not custom engineering</span></details>
         </li>
-      <li class="vg" style="padding-bottom:0"><span></span><p class="gapnote"><span class="label">Pilot-to-production gap</span>Where physical-AI companies most often stall, and where capital is most often mispriced.</p></li>
+      <li class="vg" style="padding-bottom:0"><span></span><details class="gapnote gd"><summary><span class="label">Pilot-to-production gap</span><span class="gp" aria-hidden="true">+</span></summary><span>Where physical-AI companies most often stall, and where capital is most often mispriced.</span></details></li>
       <li class="vg"><i></i><details class="gd"><summary><strong><b>G6</b>Self-improving fleet</strong><span class="gp" aria-hidden="true">+</span></summary><span>Data loop lifts accuracy and cuts deployment time</span></details></li>
     </ol>
   </div>
