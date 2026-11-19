@@ -372,6 +372,12 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .m .gapnote.gd summary::-webkit-details-marker{display:none}
 .m .gapnote.gd .label{display:inline}
 .m .gapnote.gd>span{display:block;margin-top:4px}
+.companies{justify-items:start;text-align:left}
+.companies ul{justify-content:flex-start!important;gap:6px 0!important;margin:0!important;padding:0!important}
+.companies li{font-family:var(--mono)!important;font-variation-settings:normal!important;font-weight:500!important;font-size:13px!important;letter-spacing:.06em!important;text-transform:uppercase;color:var(--accent)!important}
+.companies li:not(:last-child)::after{content:"·";margin:0 12px;color:var(--muted)}
+.m .companies li{font-size:12px!important}
+.m .companies li:not(:last-child)::after{margin:0 9px}
 </style>
 </head>
 <body>
