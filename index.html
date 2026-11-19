@@ -362,6 +362,12 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .m .companies{border-top:1px solid var(--line);padding-block:28px;display:grid;gap:12px}
 .m .companies ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px 22px}
 .m .companies li{font-family:var(--display);font-variation-settings:"wdth" 112;font-weight:700;font-size:16px;color:var(--muted);white-space:nowrap}
+.m .vg .gd{min-width:0}
+.m .vg .gd summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:10px;min-height:24px}
+.m .vg .gd summary::-webkit-details-marker{display:none}
+.m .vg .gd .gp{width:22px;height:22px;flex:none;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;font-family:var(--mono);font-size:13px;color:var(--muted);transition:transform .2s}
+.m .vg .gd[open] .gp{transform:rotate(45deg);color:var(--accent);border-color:var(--accent)}
+.m .vg .gd>span{display:block;margin-top:4px}
 </style>
 </head>
 <body>
@@ -401,12 +407,12 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     </div>
     <p class="exec-label label">Execution · stage gates</p>
     <ol class="gates">
-      <li class="gate"><i></i><b>G1</b><strong>Prototype</strong></li>
-      <li class="gate"><i></i><b>G2</b><strong>Validation</strong></li>
-      <li class="gate gap"><i></i><b>G3</b><strong>Pilot</strong></li>
-      <li class="gate gap"><i></i><b>G4</b><strong>Repeatable use case</strong></li>
-      <li class="gate gap"><i></i><b>G5</b><strong>Multi use case</strong></li>
-      <li class="gate"><i></i><b>G6</b><strong>Self-improving fleet</strong></li>
+      <li class="gate"><i></i><b>G1</b><strong>Prototype</strong><span>Model performs curated tasks in the lab</span></li>
+      <li class="gate"><i></i><b>G2</b><strong>Validation</strong><span>Accuracy, speed and safety measured against target benchmarks</span></li>
+      <li class="gate gap"><i></i><b>G3</b><strong>Pilot</strong><span>First use case in live operations, on real customer data</span></li>
+      <li class="gate gap"><i></i><b>G4</b><strong>Repeatable use case</strong><span>Same task at new sites with minimal retraining</span></li>
+      <li class="gate gap"><i></i><b>G5</b><strong>Multi use case</strong><span>New tasks added by a generalist model, not custom engineering</span></li>
+      <li class="gate"><i></i><b>G6</b><strong>Self-improving fleet</strong><span>Data loop lifts accuracy and speed, and cuts deployment time</span></li>
       <li class="gap-band"><span class="label">The pilot-to-production gap</span>Where physical-AI companies most often stall: a model that wins one pilot but does not generalise, and where capital is most often mispriced.</li>
     </ol>
     </div>
@@ -638,14 +644,14 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     <div class="layer l3"><b>Organisation &amp; governance</b><span>Team structure, decision rights, gate reviews</span></div>
     <p class="label">Execution · stage gates</p>
     <ol class="vgates">
-      <li class="vg"><i></i><strong><b>G1</b>Prototype</strong></li>
-      <li class="vg"><i></i><strong><b>G2</b>Validation</strong></li>
-      <li class="vg gap"><i></i><strong><b>G3</b>Pilot</strong></li>
-      <li class="vg gap"><i></i><strong><b>G4</b>Repeatable use case</strong></li>
-      <li class="vg gap"><i></i><strong><b>G5</b>Multi use case</strong>
+      <li class="vg"><i></i><details class="gd"><summary><strong><b>G1</b>Prototype</strong><span class="gp" aria-hidden="true">+</span></summary><span>Model performs curated tasks in the lab</span></details></li>
+      <li class="vg"><i></i><details class="gd"><summary><strong><b>G2</b>Validation</strong><span class="gp" aria-hidden="true">+</span></summary><span>Accuracy, speed and safety against target benchmarks</span></details></li>
+      <li class="vg gap"><i></i><details class="gd"><summary><strong><b>G3</b>Pilot</strong><span class="gp" aria-hidden="true">+</span></summary><span>First use case in live operations, on real customer data</span></details></li>
+      <li class="vg gap"><i></i><details class="gd"><summary><strong><b>G4</b>Repeatable use case</strong><span class="gp" aria-hidden="true">+</span></summary><span>Same task at new sites with minimal retraining</span></details></li>
+      <li class="vg gap"><i></i><details class="gd"><summary><strong><b>G5</b>Multi use case</strong><span class="gp" aria-hidden="true">+</span></summary><span>New tasks added by a generalist model, not custom engineering</span></details>
         </li>
       <li class="vg" style="padding-bottom:0"><span></span><p class="gapnote"><span class="label">Pilot-to-production gap</span>Where physical-AI companies most often stall, and where capital is most often mispriced.</p></li>
-      <li class="vg"><i></i><strong><b>G6</b>Self-improving fleet</strong></li>
+      <li class="vg"><i></i><details class="gd"><summary><strong><b>G6</b>Self-improving fleet</strong><span class="gp" aria-hidden="true">+</span></summary><span>Data loop lifts accuracy and cuts deployment time</span></details></li>
     </ol>
   </div>
 </section>
