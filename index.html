@@ -330,6 +330,38 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .m .actionbar small{font-size:12px;color:var(--muted);line-height:1.3}
 @media (prefers-reduced-motion:no-preference){.m .vg.gap i{animation:pulse 2.4s ease-in-out infinite}
 @keyframes pulse{50%{box-shadow:0 0 0 6px color-mix(in srgb,var(--signal) 25%,transparent)}}}
+.proof strong span{font:inherit!important;color:inherit!important;line-height:inherit!important}
+.d .exp-grid{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:40px;align-items:start}
+.d .exp-grid .cred-folds{grid-template-columns:1fr}
+.d #record .section-head{margin-bottom:28px}
+@media (min-width:901px){.d .role summary{grid-template-columns:96px minmax(0,1fr) auto;gap:16px;padding-block:12px}.d .role ul{margin:0 46px 16px 112px}}
+.d .role h3{font-size:17px}
+@media (max-width:900px){.d .exp-grid{grid-template-columns:1fr;gap:32px}}
+.d .companies{border-top:1px solid var(--line);padding-block:32px;display:grid;gap:16px}
+.d .companies ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:12px 40px;align-items:center}
+.d .companies li{font-family:var(--display);font-variation-settings:"wdth" 112;font-weight:700;font-size:19px;color:var(--muted);letter-spacing:.01em;white-space:nowrap}
+.m .steps li::before{content:"Option " counter(s)}
+.m .pain{display:grid;gap:10px}
+.m .pain div{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--signal);border-radius:6px;padding:14px 16px;display:grid;gap:6px}
+.m .pain p{font-family:var(--display);font-variation-settings:"wdth" 108;font-weight:700;font-size:17px;line-height:1.25}
+.m .pain small{font-size:14px;color:var(--muted);line-height:1.4}
+.m .pain .who{justify-self:start;font:700 13px var(--body);letter-spacing:.01em;text-transform:none;color:var(--surface);background:var(--accent);padding:4px 11px;border-radius:999px}
+.m .seg{display:grid;grid-template-columns:1fr 1fr;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:3px;gap:3px}
+.m .seg button{font:600 14px var(--body);color:var(--muted);background:transparent;border:0;border-radius:6px;padding:10px;min-height:42px;cursor:pointer}
+.m .seg button[aria-selected="true"]{background:var(--ink);color:var(--bg)}
+.m .tabpane{display:grid;gap:12px}
+.m .role summary{grid-template-columns:auto 1fr auto;gap:0 10px;padding:9px 0 9px 16px}
+.m .role .yrs{grid-column:1;grid-row:1}
+.m .role .org{grid-column:2;grid-row:1;font-size:13px}
+.m .role h3{grid-column:1 / span 2;grid-row:2;font-size:15px;font-weight:600}
+.m .role .plus{grid-column:3;grid-row:1 / span 2;width:26px;height:26px}
+.m .role::before{top:16px}
+.m .track{border-left:4px solid var(--accent)}
+.m .track summary .who{font-family:var(--display);font-variation-settings:"wdth" 110;font-size:21px;font-weight:800;letter-spacing:0;text-transform:none;color:var(--accent);line-height:1.1}
+.m .track summary h3{font-family:var(--body);font-size:14px;font-weight:500;color:var(--muted);line-height:1.35}
+.m .companies{border-top:1px solid var(--line);padding-block:28px;display:grid;gap:12px}
+.m .companies ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px 22px}
+.m .companies li{font-family:var(--display);font-variation-settings:"wdth" 112;font-weight:700;font-size:16px;color:var(--muted);white-space:nowrap}
 </style>
 </head>
 <body>
@@ -338,7 +370,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 <header class="top">
   <div class="mark">BEDINI<span>/</span>ADVISORY</div>
   <nav aria-label="Sections">
-    <a href="#services">Services</a><a href="#scorecard">Scorecard</a><a href="#record">Track record</a><a href="#creds">Credentials</a><a href="#contact">Contact</a>
+    <a href="#services">Services</a><a href="#scorecard">Scorecard</a><a href="#record">Track record</a><a href="#contact">Contact</a>
   </nav>
   <a class="btn" href="#contact">Book a diagnostic call</a>
 </header>
@@ -481,11 +513,12 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 
 <section id="record">
   <div class="section-head">
-    <p class="label">Track record</p>
+    <p class="label">Track record &amp; background</p>
     <h2>Strategy, tested on the deployment floor</h2>
     <p>Every role has combined the plan and its delivery: deciding where automation should go next, then making it run at scale and pay back.</p>
   </div>
-  <div class="fold-bar"><span class="label">7 roles · 2014 to today · open a role for detail</span><button class="toggle-all" type="button" data-target="d-record">Open all</button></div>
+  <div class="exp-grid"><div>
+  <div class="fold-bar"><span class="label">7 roles · 2014 to today</span><button class="toggle-all" type="button" data-target="d-record">Open all</button></div>
   <div class="record" id="d-record">
     <details class="role"><summary><span class="yrs">2026</span><span class="rt"><h3>Global Robotics Portfolio &amp; Solution Manager</h3><span class="org">ABB Robotics</span></span><span class="plus" aria-hidden="true">+</span></summary>
       <ul><li>Led deployment and go-to-market strategy for a $10M first-of-kind physical-AI autonomous mobile manipulator, from prototype to launch</li><li>Built the global product and deployment team, validation gates and KPI framework</li></ul></details>
@@ -502,15 +535,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     <details class="role"><summary><span class="yrs">2014</span><span class="rt"><h3>Project Manager, Product Industrialisation</h3><span class="org">Philip Morris International</span></span><span class="plus" aria-hidden="true">+</span></summary>
       <ul><li>Built global KPI frameworks, processes and IT systems for large-scale product launches</li></ul></details>
   </div>
-</section>
-
-
-<section id="creds">
-  <div class="section-head">
-    <p class="label">Background</p>
-    <h2>Education &amp; credentials</h2>
-  </div>
-  <div class="fold-bar"><span class="label">Imperial College London · PMP · English, Italian, Spanish</span><button class="toggle-all" type="button" data-target="d-creds">Open all</button></div>
+  </div><div id="creds">
+  <div class="fold-bar"><span class="label">Education &amp; credentials</span><button class="toggle-all" type="button" data-target="d-creds">Open all</button></div>
   <div class="cred-folds" id="d-creds">
     <details class="cfold"><summary><span>Education</span><span class="hint">MEng and MRes, Imperial College London</span><span class="plus" aria-hidden="true">+</span></summary>
       <div class="cbody"><p><b>MEng, Industrial Management Engineering</b><br>Bologna &amp; Imperial College London · First Class Honours (110/110)</p><p><b>MRes, Innovation &amp; Entrepreneurship</b><br>LUISS &amp; Imperial College London · PhD track</p></div></details>
@@ -521,6 +547,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     <details class="cfold"><summary><span>Working languages</span><span class="hint">English, Italian, Spanish</span><span class="plus" aria-hidden="true">+</span></summary>
       <div class="cbody"><ul class="cert-list"><li><span>English</span><b>Full professional</b></li><li><span>Italian</span><b>Native</b></li><li><span>Spanish</span><b>Professional</b></li></ul><p style="margin-top:12px;color:var(--muted)">British and Italian citizen, working across the UK and EU.</p></div></details>
   </div>
+  </div></div>
 </section>
 
 <section id="contact">
@@ -539,6 +566,11 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   </div>
 </section>
 
+<div class="companies" aria-label="Organisations I have worked with">
+  <span class="label">Experience across</span>
+  <ul><li>Amazon Robotics</li><li>ABB Robotics</li><li>YFM Private Equity</li><li>Cambridge Innovation Capital</li><li>University of Cambridge</li><li>Tetra Pak</li><li>Philip Morris International</li></ul>
+</div>
+
 <footer>
   <span>© 2026 Antonella Bedini · Independent advisory, London</span>
   <span>Views are my own and not those of any current or past employer.</span>
@@ -548,7 +580,6 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 
 
 
-</body></html>
 </div>
 <div class="m">
 <div class="phone">
@@ -557,7 +588,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   <a class="jump" href="#m-contact">Contact</a>
 </header>
 <nav class="chips pad" aria-label="Sections">
-  <a href="#m-framework">Framework</a><a href="#m-services">Services</a><a href="#m-scorecard">Scorecard</a><a href="#m-record">Track record</a><a href="#m-creds">Credentials</a>
+  <a href="#m-framework">Framework</a><a href="#m-services">Services</a><a href="#m-scorecard">Scorecard</a><a href="#m-record">Background</a>
 </nav>
 
 <div class="hero pad">
@@ -582,6 +613,18 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     <div><strong><span class="xp-years">12</span> yrs</strong><span>from R&amp;D to scaled deployment</span></div>
   </div>
 </div>
+
+<section id="m-problems" class="pad">
+  <div class="head">
+    <p class="label">Common challenges</p>
+    <h2>Where robotics and physical-AI programmes stall</h2>
+  </div>
+  <div class="pain">
+    <div><span class="who">Startups &amp; scale-ups</span><p>A successful pilot that does not scale to the next site</p><small>Typically an operating plan and deployment playbook issue rather than a technology issue.</small></div>
+    <div><span class="who">Venture capital</span><p>Strong pilots, limited evidence of scalability</p><small>An independent assessment of the evidence that predicts deployment at scale, before the term sheet.</small></div>
+    <div><span class="who">Private equity</span><p>A healthy order backlog with eroding project margins</p><small>Delivery risk and cost overruns identified in operational due diligence, not after acquisition.</small></div>
+  </div>
+</section>
 
 <section id="m-framework" class="pad">
   <div class="head">
@@ -613,7 +656,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     <h2>Three seats at the same table</h2>
     <p>Each engagement is fixed in scope and ends with a decision-ready output. Tap to open.</p>
   </div>
-  <details class="track" open>
+  <details class="track">
     <summary><span class="who">Startups &amp; scale-ups</span><h3>Strategy &amp; operating plan</h3><span class="plus" aria-hidden="true">+</span></summary>
     <div class="body">
       <p class="q">"We need a first customer pilot that proves the business, and a plan investors will back."</p>
@@ -680,11 +723,13 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 
 <section class="pad">
   <div class="head">
-    <p class="label">How an engagement runs</p>
+    <p class="label">Ways to work together</p>
     <h2>Scoped up front, priced up front</h2>
+    <p>Start small or go deep. Every option has a written scope before any work begins.</p>
   </div>
   <ol class="steps">
     <li><h3>Diagnostic call</h3><p>30 minutes, free. You describe the company or deal; I tell you whether I can help and what I would look at first.</p></li>
+    <li><h3>Expert call</h3><p>60 minutes on one deal or one decision: a second opinion on a pilot, a deck or a data room. Ideal for investors mid-process.</p></li>
     <li><h3>Fixed-scope engagement</h3><p>Written scope, fee and deadline. Data-room review, site visits and interviews.</p></li>
     <li><h3>Ongoing advisory</h3><p>Optional. Monthly retainer, board seat, or fractional operating role.</p></li>
   </ol>
@@ -692,9 +737,11 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 
 <section id="m-record" class="pad">
   <div class="head">
-    <p class="label">Track record</p>
-    <h2>Strategy, tested on the deployment floor</h2>
+    <p class="label">Background</p>
+    <h2>Track record &amp; credentials</h2>
   </div>
+  <div class="seg" role="tablist" aria-label="Background"><button type="button" role="tab" aria-selected="true" data-tab="m-tab-roles">Roles</button><button type="button" role="tab" aria-selected="false" data-tab="m-tab-creds">Credentials</button></div>
+  <div id="m-tab-roles" class="tabpane">
   <div class="fold-bar"><span class="label">7 roles · tap for detail</span><button class="toggle-all" type="button" data-target="m-roles">Open all</button></div>
   <div class="record" id="m-roles">
     <details class="role"><summary><span class="yrs">2026</span><h3>Global Robotics Portfolio &amp; Solution Manager</h3><span class="org">ABB Robotics</span><span class="plus" aria-hidden="true">+</span></summary>
@@ -712,13 +759,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     <details class="role"><summary><span class="yrs">2014</span><h3>Project Manager, Product Industrialisation</h3><span class="org">Philip Morris International</span><span class="plus" aria-hidden="true">+</span></summary>
       <ul><li>Global KPI frameworks and processes for large launches</li></ul></details>
   </div>
-</section>
-
-<section id="m-creds" class="pad">
-  <div class="head">
-    <p class="label">Credentials</p>
-    <h2>Education &amp; qualifications</h2>
   </div>
+  <div id="m-tab-creds" class="tabpane" hidden>
   <div class="fold-bar"><span class="label">4 topics · tap to open</span><button class="toggle-all" type="button" data-target="m-credfolds">Open all</button></div>
   <div class="fold-group" id="m-credfolds">
   <details class="fold">
@@ -748,6 +790,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     </div>
   </details>
   </div>
+  </div>
 </section>
 
 <section id="m-contact" class="pad">
@@ -765,6 +808,11 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     <p class="note" id="copyNote-m" aria-live="polite"></p>
   </div>
 </section>
+
+<div class="companies pad" aria-label="Organisations I have worked with">
+  <span class="label">Experience across</span>
+  <ul><li>Amazon Robotics</li><li>ABB Robotics</li><li>YFM Private Equity</li><li>Cambridge Innovation Capital</li><li>University of Cambridge</li><li>Tetra Pak</li><li>Philip Morris International</li></ul>
+</div>
 
 <footer class="pad">
   <span>© 2026 Antonella Bedini · Independent advisory</span>
@@ -787,6 +835,8 @@ document.querySelectorAll('.xp-years').forEach(function(e){var n=new Date().getF
 document.querySelectorAll('.toggle-all').forEach(function(b){b.addEventListener('click',function(){
   var box=document.getElementById(b.dataset.target),ds=box.querySelectorAll('details'),open=b.textContent==='Open all';
   ds.forEach(function(d){d.open=open});b.textContent=open?'Close all':'Open all';});});wire('copyBtn-m','email-m','copyNote-m');
+document.querySelectorAll('.m .seg button').forEach(function(b){b.addEventListener('click',function(){
+  document.querySelectorAll('.m .seg button').forEach(function(o){var on=o===b;o.setAttribute('aria-selected',on);document.getElementById(o.dataset.tab).hidden=!on;});});});
 </script>
 </body>
 </html>
