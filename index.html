@@ -76,7 +76,6 @@ body{background:var(--bg)}
 .d .cta-row{display:flex;gap:12px;flex-wrap:wrap}
 .d .levers{list-style:none;margin:-8px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
 .d .levers li{font-family:var(--mono);font-size:13px;letter-spacing:.02em;color:var(--accent);background:var(--accent-soft);padding:6px 12px;border-radius:3px}
-.d .cred-line{font-size:15px;color:var(--muted);max-width:60ch;margin-top:-8px}
 .d .ladder{margin-top:24px;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:24px;overflow-x:auto}
 .d .ladder-head{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:20px}
 .d .frame{min-width:760px;position:relative;padding:0 14px 4px;border-left:2px solid var(--accent-soft);border-right:2px solid var(--accent-soft);border-radius:28px 28px 0 0}
@@ -378,6 +377,18 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .companies li:not(:last-child)::after{content:"·";margin:0 12px;color:var(--muted)}
 .m .companies li{font-size:12px!important}
 .m .companies li:not(:last-child)::after{margin:0 9px}
+.d .steps{grid-template-columns:repeat(4,1fr)}
+.d .steps li::before{content:"Option " counter(s)}
+.d .steps li{align-content:start}
+.d .pain{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.d .pain div{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--signal);border-radius:6px;padding:22px 24px;display:grid;gap:10px;align-content:start}
+.d .pain p{font-family:var(--display);font-variation-settings:"wdth" 108;font-weight:700;font-size:20px;line-height:1.25}
+.d .pain small{font-size:15px;color:var(--muted);line-height:1.45}
+.d .pain .who{justify-self:start;font:700 13px var(--body);letter-spacing:.01em;color:var(--surface);background:var(--accent);padding:4px 11px;border-radius:999px}
+@media (max-width:900px){.d .pain,.d .steps{grid-template-columns:1fr}}
+.d .track{border-left:4px solid var(--accent)}
+.d .track .who{font-family:var(--display);font-variation-settings:"wdth" 110;font-size:24px;font-weight:800;letter-spacing:0;text-transform:none;color:var(--accent);line-height:1.1}
+.d .track h3{font-family:var(--body);font-size:15px;font-weight:500;color:var(--muted);line-height:1.35;margin-top:-10px}
 </style>
 </head>
 <body>
@@ -386,7 +397,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 <header class="top">
   <div class="mark">BEDINI<span>/</span>ADVISORY</div>
   <nav aria-label="Sections">
-    <a href="#services">Services</a><a href="#scorecard">Scorecard</a><a href="#record">Track record</a><a href="#contact">Contact</a>
+    <a href="#services">Services</a><a href="#scorecard">Scorecard</a><a href="#record">Background</a><a href="#contact">Contact</a>
   </nav>
   <a class="btn" href="#contact">Book a diagnostic call</a>
 </header>
@@ -398,7 +409,6 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   <ul class="levers" aria-label="How I make the strategy happen">
     <li>Operational plans</li><li>Organisational structure</li><li>Strategy alignment</li><li>Prioritisation mechanisms</li>
   </ul>
-  <p class="cred-line"><span class="xp-years">12</span> years deploying robotics, physical AI and automation at Amazon Robotics, ABB Robotics, Tetra Pak and Philip Morris International, plus hands-on operating work inside private-equity portfolios.</p>
   <div class="cta-row">
     <a class="btn" href="#contact">Book a 30-minute diagnostic</a>
     <a class="btn ghost" href="#scorecard">See a sample readiness scorecard</a>
@@ -435,6 +445,18 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   <div><strong>+20%</strong><span>portfolio ARR across 5 PE-backed companies</span></div>
   <div><strong><span class="xp-years">12</span> yrs</strong><span>taking automation from R&amp;D to scaled deployment</span></div>
 </div>
+
+<section id="problems">
+  <div class="section-head">
+    <p class="label">Common challenges</p>
+    <h2>Where robotics and physical&#8209;AI programmes stall</h2>
+  </div>
+  <div class="pain">
+    <div><span class="who">Startups &amp; scale-ups</span><p>A successful pilot that does not scale to the next site</p><small>Typically an operating plan and deployment playbook issue rather than a technology issue.</small></div>
+    <div><span class="who">Venture capital</span><p>Strong pilots, limited evidence of scalability</p><small>An independent assessment of the evidence that predicts deployment at scale, before the term sheet.</small></div>
+    <div><span class="who">Private equity</span><p>A healthy order backlog with eroding project margins</p><small>Delivery risk and cost overruns identified in operational due diligence, not after acquisition.</small></div>
+  </div>
+</section>
 
 <section id="services">
   <div class="section-head">
@@ -517,11 +539,13 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 
 <section>
   <div class="section-head">
-    <p class="label">How an engagement runs</p>
+    <p class="label">Ways to work together</p>
     <h2>Scoped up front, priced up front</h2>
+    <p>Start small or go deep. Every option has a written scope before any work begins.</p>
   </div>
   <ol class="steps">
     <li><h3>Diagnostic call</h3><p>30 minutes, free. You describe the company or deal; I tell you whether I can help and what I would look at first.</p></li>
+    <li><h3>Expert call</h3><p>60 minutes on one deal or one decision: a second opinion on a pilot, a deck or a data room. Ideal for investors mid-process.</p></li>
     <li><h3>Fixed-scope engagement</h3><p>A written scope, fee and deadline. Data-room review, site visits and interviews with the team and customers.</p></li>
     <li><h3>Ongoing advisory</h3><p>Optional. A monthly retainer, a board seat, or a fractional operating role through the next funding milestone.</p></li>
   </ol>
@@ -529,7 +553,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 
 <section id="record">
   <div class="section-head">
-    <p class="label">Track record &amp; background</p>
+    <p class="label">Background · track record &amp; credentials</p>
     <h2>Strategy, tested on the deployment floor</h2>
     <p>Every role has combined the plan and its delivery: deciding where automation should go next, then making it run at scale and pay back.</p>
   </div>
@@ -614,7 +638,6 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   <ul class="levers" aria-label="How I make the strategy happen">
     <li>Operational plans</li><li>Org structure</li><li>Strategy alignment</li><li>Prioritisation</li>
   </ul>
-  <p class="cred"><span class="xp-years">12</span> years deploying robotics, physical AI and automation at Amazon Robotics, ABB Robotics, Tetra Pak and Philip Morris International, plus operating work inside PE portfolios.</p>
   <div class="ctas">
     <a class="btn" href="#m-contact">Book a 30-minute diagnostic</a>
     <a class="btn ghost" href="#m-scorecard">See a sample scorecard</a>
@@ -633,7 +656,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 <section id="m-problems" class="pad">
   <div class="head">
     <p class="label">Common challenges</p>
-    <h2>Where robotics and physical-AI programmes stall</h2>
+    <h2>Where robotics and physical&#8209;AI programmes stall</h2>
   </div>
   <div class="pain">
     <div><span class="who">Startups &amp; scale-ups</span><p>A successful pilot that does not scale to the next site</p><small>Typically an operating plan and deployment playbook issue rather than a technology issue.</small></div>
